@@ -1,0 +1,21 @@
+{
+  "skills": [
+    { "name": "JavaScript", "progress": 85 },
+    { "name": "Node.js", "progress": 80 },
+    { "name": "React / Next.js", "progress": 84 },
+    { "name": "TypeScript", "progress": 81 },
+    { "name": "HTML", "progress": 90 },
+    { "name": "CSS", "progress": 70 },
+    { "name": "C#", "progress": 78 },
+    { "name": "Java", "progress": 64 },
+    { "name": "Golang", "progress": 65 },
+    { "name": "Git", "progress": 30 }
+  ],
+  "links": [
+    { "url": "https://www.linkedin.com/in/mateo-ledesma/", "text": "LinkedIn" },
+    { "url": "https://github.com/Nico-14", "text": "GitHub" },
+    { "url": "https://instagram.com/null14__", "text": "Instagram" },
+    { "url": "http://rlgo.store/", "text": "Venta de créditos de Rocket League - rlgo.store" },
+    { "url": "https://wa.me/5493435047916", "text": "WhatsApp" }
+  ]
+}
