@@ -7,7 +7,6 @@ const navLinks = [
   { href: '/', text: 'Inicio' },
   { href: '/about', text: 'Sobre mí' },
   { href: '/links', text: 'Links' },
-  { href: '/contact', text: 'Contacto' },
 ];
 
 export default function Layout({ children }) {
