@@ -7,7 +7,7 @@ export default function Contact() {
   const [subject, setSubject] = useState('');
   const [text, setText] = useState('');
   const [isSending, setIsSending] = useState(false);
-  const [isAlertShow, setIsAlertShow] = useState(false);
+  const [isAlertShowing, setIsAlertShowing] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ export default function Contact() {
         },
         body: JSON.stringify({ email, subject, text }),
       });
-      setIsAlertShow(true);
+      setIsAlertShowing(true);
       setEmail('');
       setSubject('');
       setText('');
@@ -30,8 +30,6 @@ export default function Contact() {
       setIsSending(false);
     }
   };
-
-  console.log(isAlertShow);
 
   return (
     <Layout>
@@ -121,14 +119,14 @@ export default function Contact() {
           </nav>
         </section>
       </article>
-      {isAlertShow && (
+      {isAlertShowing && (
         <div className="absolute h-full w-full top-0 left-0">
           <div className="absolute h-full w-full bg-black opacity-50"></div>
           <div className="absolute mx-auto bg-white rounded px-5 py-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <p className="text-gray-600 text-xl">Mail enviado!</p>
             <button
               className="bg-indigo-500 text-white rounded px-4 py-2 hover:opacity-95 mt-4"
-              onClick={() => setIsAlertShow(false)}
+              onClick={() => setIsAlertShowing(false)}
             >
               Aceptar
             </button>
