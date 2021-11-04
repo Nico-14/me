@@ -30,7 +30,7 @@ export default function About() {
           <h2 className="text-indigo-500 text-3xl sm:text-4xl">Habilidades</h2>
           <div className="mt-6 flex gap-y-7 flex-wrap max-w-7xl gap-x-16 justify-center">
             {data.skills.map(({ name, progress }) => (
-              <div className="w-full lg:w-2/6">
+              <div className="w-full lg:w-2/6" key={name}>
                 <div className="flex justify-between text-gray-500 text-xl sm:text-2xl">
                   <span>{name}</span>
                   <span>{progress}%</span>
