@@ -14,8 +14,7 @@ export default function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Mateo Ledesma</title>
       </Head>
       <header className="flex w-full justify-center px-4 md:px-14 mt-4">
         <nav className="flex gap-x-5 items-center">
