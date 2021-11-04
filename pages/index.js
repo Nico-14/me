@@ -8,7 +8,7 @@ export default function Home() {
     <Layout>
       <section>
         <Image src={foto} className="rounded-full" objectFit="cover" width="248" height="248"></Image>
-        <h1 className="text-indigo-500 text-4xl sm:text-5xl mt-6">Mateo Ledesma</h1>
+        <h1 className="text-indigo-600 text-4xl sm:text-5xl mt-6">Mateo Ledesma</h1>
         <p className="text-xl sm:text-2xl text-gray-500 mt-1">Desarrollador Full Stack en JavaScript</p>
         <nav className="flex justify-center mt-8 gap-x-3">
           <IconLink href="https://www.linkedin.com/in/mateo-ledesma/" title="LinkedIn">

@@ -11,7 +11,7 @@ export default function About() {
   return (
     <Layout>
       <article className="py-10">
-        <h1 className="text-indigo-500 text-4xl sm:text-5xl">Sobre mí</h1>
+        <h1 className="text-indigo-600 text-4xl sm:text-5xl">Sobre mí</h1>
         <p className="text-gray-600 text-xl sm:text-2xl mt-6 text-left w-full max-w-5xl mx-auto">
           Tengo {calculateAge(new Date(2000, 8, 14))} años y empecé a programar a los 15 años de forma autodidacta. En
           2019 comencé a programar con JavaScript y terminé siendo full stack en JavaScript. Durante este proceso
@@ -27,7 +27,7 @@ export default function About() {
           backend.
         </p>
         <section className="mt-14">
-          <h2 className="text-indigo-500 text-3xl sm:text-4xl">Habilidades</h2>
+          <h2 className="text-indigo-600 text-3xl sm:text-4xl">Habilidades</h2>
           <div className="mt-6 flex gap-y-7 flex-wrap max-w-7xl gap-x-16 justify-center">
             {data.skills.map(({ name, progress }) => (
               <div className="w-full lg:w-2/6" key={name}>
@@ -37,7 +37,7 @@ export default function About() {
                 </div>
                 <div className="w-full relative bg-indigo-200 h-4 rounded mt-2">
                   <div
-                    className={`absolute bg-indigo-500 h-full rounded-tl rounded-bl ${
+                    className={`absolute bg-indigo-600 h-full rounded-tl rounded-bl ${
                       progress === 100 ? 'rounded-tr rounded br' : ''
                     }`}
                     style={{ width: progress + '%' }}
