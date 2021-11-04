@@ -43,7 +43,7 @@ export default function Layout({ children }) {
             <Link href={href} key={href}>
               <a
                 className={`font-medium hover:text-gray-600 ${
-                  pathname === href ? 'text-gray-700' : 'text-gray-500'
+                  pathname === href ? 'text-gray-900' : 'text-gray-500'
                 } py-2 sm:py-0`}
               >
                 {text}
