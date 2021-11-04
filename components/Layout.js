@@ -21,11 +21,14 @@ export default function Layout({ children }) {
       <Head>
         <title>Mateo Ledesma</title>
       </Head>
-      <header className="flex w-full justify-center px-4 md:px-14 mt-4 relative">
-        <button className="sm:hidden ml-auto" onClick={handleMenuClick}>
+      <header className="flex w-full justify-center px-4 md:px-14 pt-4 bg-white sticky sm:static top-0 z-10">
+        <button
+          className={`sm:hidden ml-auto ${isMenuShowing ? 'text-indigo-700' : 'text-indigo-600'}`}
+          onClick={handleMenuClick}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-9 w-9 text-indigo-600"
+            className="h-9 w-9"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -36,7 +39,7 @@ export default function Layout({ children }) {
         <nav
           className={`gap-x-5 ${
             isMenuShowing ? 'absolute flex' : 'hidden'
-          } bg-white flex-col w-full pb-4 px-6 z-10 top-full sm:flex sm:static sm:flex-row sm:items-center sm:w-auto sm:p-0 drop-shadow-2xl sm:drop-shadow-none`}
+          } bg-white flex-col w-full pb-4 px-6 top-full sm:flex sm:static sm:flex-row sm:items-center sm:w-auto sm:p-0 drop-shadow-2xl sm:drop-shadow-none`}
         >
           {navLinks.map(({ href, text }) => (
             <Link href={href} key={href}>
@@ -51,7 +54,7 @@ export default function Layout({ children }) {
           ))}
           <button className="bg-indigo-600 hover:opacity-95 text-white rounded px-4 py-2 mt-2 sm:mt-0">
             <a href="/cv.pdf" download="CV Mateo Ledesma.pdf">
-              Descarga CV
+              Descargar CV
             </a>
           </button>
         </nav>
