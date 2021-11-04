@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         res.status(200).send('OK');
       } catch (err) {
         console.error(err);
-        res.status(500).send('Error');
+        res.status(500).send(err.message);
       }
     } else res.status(400).send('Bad request');
   } else {
