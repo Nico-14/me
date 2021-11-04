@@ -120,7 +120,7 @@ export default function Contact() {
         </section>
       </article>
       {isAlertShowing && (
-        <div className="absolute h-full w-full top-0 left-0">
+        <div className="absolute h-full w-full top-0 left-0 z-20">
           <div className="absolute h-full w-full bg-black opacity-50"></div>
           <div className="absolute mx-auto bg-white rounded px-5 py-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <p className="text-gray-600 text-xl">Mail enviado!</p>
