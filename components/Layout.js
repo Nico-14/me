@@ -16,6 +16,7 @@ export default function Layout({ children }) {
   const handleMenuClick = () => {
     setIsMenuShowing(!isMenuShowing);
   };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
