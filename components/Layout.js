@@ -53,11 +53,13 @@ export default function Layout({ children }) {
               </a>
             </Link>
           ))}
-          <button className="bg-indigo-600 hover:opacity-95 text-white rounded px-4 py-2 mt-2 sm:mt-0">
-            <a href="/cv.pdf" download="CV Mateo Ledesma.pdf">
-              Descargar CV
-            </a>
-          </button>
+          <a
+            href="/cv.pdf"
+            download="CV Mateo Ledesma.pdf"
+            className="bg-indigo-600 hover:opacity-95 text-white rounded px-4 py-2 mt-2 sm:mt-0"
+          >
+            Descargar CV
+          </a>
         </nav>
       </header>
       <main className="flex-1 px-6 md:px-20 py-4 flex justify-center items-center text-center">{children}</main>
