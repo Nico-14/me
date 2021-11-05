@@ -1,5 +1,4 @@
 import Layout from '../components/Layout';
-import ProgressWrapper from '../components/ProgressWrapper';
 import data from '../data.json';
 
 function calculateAge(date) {
@@ -30,29 +29,22 @@ export default function About() {
         <section className="mt-14">
           <h2 className="text-indigo-600 text-3xl sm:text-4xl">Habilidades</h2>
           <div className="mt-6 flex gap-y-7 flex-wrap max-w-7xl gap-x-16 justify-center">
-            <ProgressWrapper time={500}>
-              {(elapsed) =>
-                data.skills.map(({ name, progress }) => {
-                  const percentage = Math.ceil(progress * elapsed);
-                  return (
-                    <div className="w-full lg:w-2/6" key={name}>
-                      <div className="flex justify-between text-gray-500 text-xl sm:text-2xl">
-                        <span>{name}</span>
-                        <span>{percentage}%</span>
-                      </div>
-                      <div className="w-full relative bg-indigo-200 h-4 rounded mt-2">
-                        <div
-                          className={`absolute bg-indigo-600 h-full rounded-tl rounded-bl ${
-                            percentage === 100 ? 'rounded-tr rounded br' : ''
-                          }`}
-                          style={{ width: percentage + '%' }}
-                        ></div>
-                      </div>
-                    </div>
-                  );
-                })
-              }
-            </ProgressWrapper>
+            {data.skills.map(({ name, progress }) => (
+              <div className="w-full lg:w-2/6" key={name}>
+                <div className="flex justify-between text-gray-500 text-xl sm:text-2xl">
+                  <span>{name}</span>
+                  <span>{progress}%</span>
+                </div>
+                <div className="w-full relative bg-indigo-200 h-4 rounded mt-2">
+                  <div
+                    className={`absolute bg-indigo-600 h-full rounded-tl rounded-bl ${
+                      progress === 100 ? 'rounded-tr rounded br' : ''
+                    }`}
+                    style={{ width: progress + '%' }}
+                  ></div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </article>
