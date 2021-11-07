@@ -14,11 +14,11 @@ export default function About() {
         <h1 className="text-indigo-600 text-4xl sm:text-5xl">Sobre mí</h1>
         <p className="text-gray-600 text-xl sm:text-2xl mt-6 text-left w-full max-w-5xl mx-auto">
           Tengo {calculateAge(new Date(2000, 8, 14))} años y empecé a programar a los 15 años de forma autodidacta. En
-          2019 comencé a programar con JavaScript y terminé siendo full stack en JavaScript. Durante este proceso
-          aprendí distintos lenguajes de programación y tecnologías, como Lua, C#, Java, Go, Vue, Svelte.
+          2019 comencé a aprender a programar con JavaScrit, conocí Node.js y distintos frameworks y librerías frontend.
+          Durante esos años también aprendí otros lenguajes de programación como Lua, C#, Java, Go, C++.
           <br />
           Actualmente estoy terminando el primer año de la Tecnicatura Universitaria en Programación y buscando un
-          empleo como desarrollador backend o frontend en JavaScript, o full stack si fuera necesario.
+          empleo como desarrollador full stack Javascript.
           <br />
           Utilizo React en el frontend y express (o framework similar) en el backend, generalmente usando MongoDB con
           mongoose como database.
