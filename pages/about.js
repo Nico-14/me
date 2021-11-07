@@ -23,8 +23,7 @@ export default function About() {
           Utilizo React en el frontend y express (o framework similar) en el backend, generalmente usando MongoDB con
           mongoose como database.
           <br />
-          También estoy dispuesto a capacitarme y trabajar con otros lenguajes y tecnologías, como Java, C# o Go para el
-          backend.
+          También estoy dispuesto a capacitarme y trabajar con otros lenguajes para backend, como Java, C# o Go.
         </p>
         <section className="mt-14">
           <h2 className="text-indigo-600 text-3xl sm:text-4xl">Habilidades</h2>
