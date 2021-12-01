@@ -11,8 +11,8 @@ export default function About() {
   return (
     <Layout>
       <article className="py-10">
-        <h1 className="text-indigo-600 text-4xl sm:text-5xl">Sobre mí</h1>
-        <p className="text-gray-600 text-xl sm:text-2xl mt-6 text-left w-full max-w-5xl mx-auto">
+        <h1 className="text-indigo-600 text-4xl sm:text-5xl dark:text-indigo-700">Sobre mí</h1>
+        <p className="text-gray-600 text-xl sm:text-2xl mt-6 text-left w-full max-w-5xl mx-auto dark:text-gray-300">
           Tengo {calculateAge(new Date(2000, 8, 14))} años y empecé a programar a los 15 años de forma autodidacta. En
           2019 comencé a aprender a programar con JavaScrit, conocí Node.js y distintos frameworks y librerías frontend.
           Durante esos años también aprendí otros lenguajes de programación como Lua, C#, Java, Go, C++.
@@ -26,17 +26,17 @@ export default function About() {
           También estoy dispuesto a capacitarme y trabajar con otros lenguajes para backend, como Java, C# o Go.
         </p>
         <section className="mt-14">
-          <h2 className="text-indigo-600 text-3xl sm:text-4xl">Habilidades</h2>
+          <h2 className="text-indigo-600 text-3xl sm:text-4xl dark:text-indigo-700">Habilidades</h2>
           <div className="mt-6 flex gap-y-7 flex-wrap max-w-7xl gap-x-16 justify-center">
             {data.skills.map(({ name, progress }) => (
               <div className="w-full lg:w-2/6" key={name}>
-                <div className="flex justify-between text-gray-500 text-xl sm:text-2xl">
+                <div className="flex justify-between text-gray-500 text-xl sm:text-2xl dark:text-gray-300">
                   <span>{name}</span>
                   <span>{progress}%</span>
                 </div>
-                <div className="w-full relative bg-indigo-200 h-4 rounded mt-2">
+                <div className="w-full relative bg-indigo-200 h-4 rounded mt-2 dark:bg-gray-400">
                   <div
-                    className={`absolute bg-indigo-600 h-full rounded-tl rounded-bl ${
+                    className={`absolute bg-indigo-600 h-full rounded-tl rounded-bl dark:bg-indigo-700 ${
                       progress === 100 ? 'rounded-tr rounded br' : ''
                     }`}
                     style={{ width: progress + '%' }}
