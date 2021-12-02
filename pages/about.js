@@ -12,19 +12,27 @@ export default function About() {
     <Layout>
       <article className="py-10">
         <h1 className="text-indigo-600 text-4xl sm:text-5xl dark:text-indigo-700">Sobre mí</h1>
-        <p className="text-gray-600 text-xl sm:text-2xl mt-6 text-left w-full max-w-5xl mx-auto dark:text-gray-300">
-          Tengo {calculateAge(new Date(2000, 8, 14))} años y empecé a programar a los 15 años de forma autodidacta. En
-          2019 comencé a aprender a programar con JavaScrit, conocí Node.js y distintos frameworks y librerías frontend.
-          Durante esos años también aprendí otros lenguajes de programación como Lua, C#, Java, Go, C++.
-          <br />
-          Actualmente estoy terminando el primer año de la Tecnicatura Universitaria en Programación y buscando un
-          empleo como desarrollador full stack Javascript.
-          <br />
-          Utilizo React en el frontend y express (o framework similar) en el backend, generalmente usando MongoDB con
-          mongoose como database.
-          <br />
-          También estoy dispuesto a capacitarme y trabajar con otros lenguajes para backend, como Java, C# o Go.
-        </p>
+        <div className="text-gray-600 text-xl sm:text-2xl mt-6 text-left w-full max-w-5xl mx-auto dark:text-gray-300 space-y-3">
+          <p>Hola, mi nombre es Mateo Ledesma y tengo {calculateAge(new Date(2000, 8, 14))} años.</p>
+          <p>
+            Siempre me gustó todo lo relacionado con la ciencia y tecnología, y los videojuegos. Gracias a todo esto, en
+            especial a un videojuego, en 2015 conocí la programación y desde ese momento se convirtió en un hobby para
+            mí, superando a los videojuegos.
+          </p>
+          <p>
+            Luego, en 2019, me enfoqué en el desarrollo web, comencé con HTML, JavaScript y CSS, y terminé conociendo
+            Node.js y React.js ❤️.
+          </p>
+          <p>
+            Además de lo comentado anteriormente, he probado otros lenguajes y tecnologías, por simple curiosidad y
+            porque me gusta aprender.
+          </p>
+          <p>
+            Actualmente estoy estudiando la Tecnicatura Universitaria en Programación y buscando empleo como
+            desarrollador full stack JavaScript.
+          </p>
+        </div>
+
         <section className="mt-14">
           <h2 className="text-indigo-600 text-3xl sm:text-4xl dark:text-indigo-700">Habilidades</h2>
           <div className="mt-6 flex gap-y-7 flex-wrap max-w-7xl gap-x-16 justify-center">
