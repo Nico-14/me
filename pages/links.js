@@ -9,7 +9,7 @@ export default function Links() {
           {data.links.map(({ url, text }) => (
             <li
               key={url}
-              className="rounded bg-indigo-600 hover:opacity-95 cursor-pointer text-white my-6 font-medium dark:text-gray-300 dark:bg-indigo-700"
+              className="rounded hover:opacity-95 cursor-pointer my-6 font-medium border-2 border-pink-600 text-pink-500 text-md text-center hover:bg-pink-600 hover:text-black"
             >
               <a href={url} target="_blank" className="block py-3">
                 {text}
