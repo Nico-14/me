@@ -13,9 +13,9 @@
     { "name": "Git", "progress": 14 }
   ],
   "links": [
-    { "url": "https://www.linkedin.com/in/mateo-ledesma/", "text": "LinkedIn" },
-    { "url": "https://github.com/Nico-14", "text": "GitHub" },
-    { "url": "https://instagram.com/null14__", "text": "Instagram" },
-    { "url": "https://wa.me/5493435047916", "text": "WhatsApp" }
+    { "url": "%HOST%/linkedin", "text": "LinkedIn" },
+    { "url": "%HOST%/github", "text": "GitHub" },
+    { "url": "%HOST%/instagram", "text": "Instagram" },
+    { "url": "%HOST%/whatsapp", "text": "WhatsApp" }
   ]
 }

@@ -1,4 +1,3 @@
-import IconLink from '../components/IconLink';
 import Layout from '../components/Layout';
 
 export default function contact() {
