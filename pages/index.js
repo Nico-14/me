@@ -12,7 +12,7 @@ function calculateAge(date) {
 export default function About() {
   return (
     <Layout>
-      <article className="py-20">
+      <article className="sm:py-20">
         <section>
           <h2 className="text-4xl sm:text-5xl text-white font-medium">Un poco de mí...</h2>
           <div className="flex flex-wrap mt-14">
@@ -46,7 +46,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="mt-28">
+        <section className="mt-20">
           <h2 className="text-3xl sm:text-4xl text-white font-medium ">Habilidades</h2>
           <div className="mt-6 gap-y-7 gap-x-20 grid grid-cols-1 lg:grid-cols-2">
             {data.skills.map(({ name, progress }) => (
