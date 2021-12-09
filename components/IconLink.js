@@ -4,7 +4,7 @@ export default function IconLink({ children, href, target = '_blank', title }) {
       href={href}
       target={target}
       title={title}
-      className="h-10 w-10 p-2 rounded-full cursor-pointer flex items-center justify-center hover:scale-105 transition bg-white text-black"
+      className="h-9 w-9 p-2 rounded-full cursor-pointer flex items-center justify-center hover:scale-105 transition bg-white text-black"
     >
       {children}
     </a>
