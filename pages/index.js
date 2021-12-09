@@ -12,7 +12,7 @@ function calculateAge(date) {
 export default function About() {
   return (
     <Layout>
-      <article className="sm:py-20">
+      <article>
         <section>
           <h2 className="text-4xl sm:text-5xl text-white font-medium">Un poco de mí...</h2>
           <div className="flex flex-wrap mt-14">
