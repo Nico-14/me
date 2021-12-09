@@ -1,14 +1,47 @@
+import { useState } from 'react';
 import Layout from '../components/Layout';
 
 export default function contact() {
+  const [wspMessage, setWspMessage] = useState('');
+
+  const handleSubmitWsp = (e) => {
+    e.preventDefault();
+    window.open(`https://wa.me/5493435047916?text=${wspMessage}`, '_blank');
+  };
   return (
     <Layout>
-      <section className="self-start sm:py-20 w-full">
+      <section className="w-full">
         <h1 className="text-4xl sm:text-5xl text-white font-medium">Contacto ✉️</h1>
-        <div className="text-gray-300 mt-10 text-2xl sm:text-4xl font-semibold break-all">
-          <p>Envíame un mensaje a <a target="_blank" href="https://wa.me/5493435047916" className="text-blue-600 hover:opacity-95">WhatsApp (+54 343 5047916) haciendo click acá</a></p>
-          <p className="mt-2">o un mail a <a target="_blank" href="mailto:mateo.14.ledesma@gmail.com" className="text-blue-600 hover:opacity-95">mateo.14.ledesma@gmail.com</a></p>
-        </div>
+        <section className="mt-6">
+          <h2 className="text-2xl sm:text-3xl text-white font-medium">Contáctame por email</h2>
+          <form action="mailto:mateo.14.ledesma@gmail.com" className="flex flex-col gap-y-5 mt-4">
+            <input
+              name="subject"
+              className="border-pink-600 border-2 text-white bg-black px-3 py-2 outline-none"
+              placeholder="Asunto"
+            ></input>
+            <textarea
+              name="body"
+              className="border-pink-600 border-2 text-white bg-black px-3 py-2 outline-none resize-none"
+              rows={5}
+              placeholder="Mensaje"
+            ></textarea>
+            <button className="border-pink-600 border-2 text-white py-2 font-medium hover:bg-pink-600">Enviar</button>
+          </form>
+        </section>
+        <section className="mt-12">
+          <h2 className="text-2xl sm:text-3xl text-white font-medium">Mandame un mensaje a WhatsApp</h2>
+          <form onSubmit={handleSubmitWsp} className="flex flex-col gap-y-5 mt-4">
+            <textarea
+              name="body"
+              className="border-pink-600 border-2 text-white bg-black px-3 py-2 outline-none resize-none"
+              rows={5}
+              placeholder="Mensaje"
+              onChange={({ target }) => setWspMessage(target.value)}
+            ></textarea>
+            <button className="border-pink-600 border-2 text-white py-2 font-medium hover:bg-pink-600">Enviar</button>
+          </form>
+        </section>
       </section>
     </Layout>
   );
