@@ -40,7 +40,7 @@ export default function contact() {
         </section>
         <section className="mt-12">
           <h2 className="text-2xl sm:text-3xl text-white font-medium">
-            Mandame un mensaje a WhatsApp (+54 343 5047916
+            Mandame un mensaje a WhatsApp (+54 343 5047916)
           </h2>
           <form onSubmit={handleSubmitWsp} className="flex flex-col gap-y-5 mt-4">
             <textarea
