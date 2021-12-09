@@ -60,7 +60,7 @@ export default function Layout({ children }) {
           </svg>
         </button>
       </header>
-      <main className="flex-1 px-6 md:px-20 py-15 flex justify-center items-center container mx-auto">{children}</main>
+      <main className="flex-1 px-6 md:px-20 py-12 flex justify-center items-center container mx-auto">{children}</main>
       <footer className="flex">
         <div className="flex gap-x-3 py-4 px-2 mx-auto">
           <IconLink href="https://www.linkedin.com/in/mateo-ledesma/" title="LinkedIn">
