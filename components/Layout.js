@@ -39,7 +39,7 @@ export default function Layout({ children }) {
           <a
             href="/cv.pdf"
             download="CV Mateo Ledesma.pdf"
-            className="rounded font-medium px-4 py-2 mt-2 sm:mt-0 text-white border-2 border-white hover:bg-white hover:text-black"
+            className="font-medium px-4 py-2 mt-2 sm:mt-0 text-white border-2 border-white hover:bg-white hover:text-black"
           >
             Descargar CV
           </a>
