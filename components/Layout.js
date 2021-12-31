@@ -37,9 +37,9 @@ export default function Layout({ children }) {
             </Link>
           ))}
           <a
-            href="/cv.pdf"
+            href={`${process.env.NEXT_PUBLIC_GH_DATA_URL}/cv.pdf`}
             download="CV Mateo Ledesma.pdf"
-            className="font-medium px-4 py-2 mt-2 sm:mt-0 text-white border-2 border-white hover:bg-white hover:text-black"
+            className="font-medium px-4 py-2 mt-2 sm:mt-0 text-white border-2 rounded-sm border-white hover:bg-white hover:text-black"
           >
             Descargar CV
           </a>
