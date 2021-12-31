@@ -37,7 +37,7 @@ export default function Layout({ children }) {
             </Link>
           ))}
           <a
-            href={`${process.env.NEXT_PUBLIC_GH_DATA_URL}/cv.pdf`}
+            href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/cv.pdf"
             download="CV Mateo Ledesma.pdf"
             className="font-medium px-4 py-2 mt-2 sm:mt-0 text-white border-2 rounded-sm border-white hover:bg-white hover:text-black"
           >
