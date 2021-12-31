@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
-import data from '../data.json';
+import { getLinks } from "../services/dataService";
 
-export default function Links() {
+export default function Links({ data }) {
   const [origin, setOrigin] = useState();
 
   useEffect(() => {
@@ -11,8 +11,8 @@ export default function Links() {
 
   return (
     <Layout>
-      <nav className="w-full max-w-3xl">
-        <ul>
+      {data && (
+        <ul className="w-full max-w-3xl my-auto">
           {data.links.map(({ url, text }) => (
             <li
               key={url}
@@ -24,7 +24,12 @@ export default function Links() {
             </li>
           ))}
         </ul>
-      </nav>
+      )}
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const data = await getLinks();
+  return { props: { data }, revalidate: 60 };
 }

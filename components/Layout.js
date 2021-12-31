@@ -7,7 +7,7 @@ import IconLink from './IconLink';
 const navLinks = [
   { href: '/', text: 'Inicio' },
   { href: '/contact', text: 'Contacto' },
-  { href: '/links', text: 'Links' },
+  { href: '/portfolio', text: 'Portfolio' },
 ];
 
 export default function Layout({ children }) {
@@ -37,9 +37,9 @@ export default function Layout({ children }) {
             </Link>
           ))}
           <a
-            href="/cv.pdf"
+            href={`${process.env.NEXT_PUBLIC_GH_DATA_URL}/cv.pdf`}
             download="CV Mateo Ledesma.pdf"
-            className="font-medium px-4 py-2 mt-2 sm:mt-0 text-white border-2 border-white hover:bg-white hover:text-black"
+            className="font-medium px-4 py-2 mt-2 sm:mt-0 text-white border-2 rounded-sm border-white hover:bg-white hover:text-black"
           >
             Descargar CV
           </a>
@@ -60,7 +60,7 @@ export default function Layout({ children }) {
           </svg>
         </button>
       </header>
-      <main className="flex-1 px-6 md:px-20 py-12 flex justify-center items-center container mx-auto">{children}</main>
+      <main className="flex-1 px-6 md:px-20 py-12 flex justify-center container mx-auto">{children}</main>
       <footer className="flex">
         <div className="flex gap-x-3 py-4 px-2 mx-auto">
           <IconLink href="https://www.linkedin.com/in/mateo-ledesma/" title="LinkedIn">
