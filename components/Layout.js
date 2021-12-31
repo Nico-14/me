@@ -22,6 +22,7 @@ export default function Layout({ children }) {
     <div className={`flex flex-col min-h-screen bg-black`}>
       <Head>
         <title>Mateo Ledesma</title>
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <header className="flex w-full flex-col sm:flex-row px-4 md:px-14 py-4 sm:pt-4 sticky sm:static top-0 z-10 bg-black">
         <nav
