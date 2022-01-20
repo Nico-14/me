@@ -13,7 +13,7 @@ export default function About({ data }) {
                 <div className="text-center">
                   <img
                     src={data.profileImg}
-                    className="rounded-full object-cover w-64 mx-auto"
+                    className="rounded-full object-cover w-64 mx-auto aspect-square"
                   ></img>
                 </div>
                 <h1 className="text-4xl sm:text-5xl mt-6 font-medium text-white">Mateo Ledesma</h1>
