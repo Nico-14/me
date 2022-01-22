@@ -16,7 +16,7 @@ export default function About({ data }) {
                     className="rounded-full object-cover w-64 mx-auto aspect-square"
                   ></img>
                 </div>
-                <h1 className="text-4xl sm:text-5xl mt-6 font-medium text-white">Mateo Ledesma</h1>
+                <h1 className="text-4xl sm:text-5xl mt-6 font-medium text-white text-center">Mateo Ledesma</h1>
                 <h2 className="text-xl sm:text-2xl mt-1 text-gray-400">{data.subheading}</h2>
               </div>
               <p className="w-full lg:w-auto text-xl flex-1 sm:text-2xl mt-10 lg:my-auto lg:ml-14 space-y-3 text-gray-300 whitespace-pre-line">
