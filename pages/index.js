@@ -9,7 +9,7 @@ export default function About({ data }) {
           <section>
             <h2 className="text-4xl sm:text-5xl text-white font-medium">{data.heading}</h2>
             <div className="flex flex-wrap mt-14">
-              <div className="w-full text-center lg:w-auto lg:text-left">
+              <div className="w-full text-center lg:w-auto lg:text-left lg:flex-[2]">
                 <div className="text-center">
                   <img
                     src={data.profileImg}
@@ -17,9 +17,9 @@ export default function About({ data }) {
                   ></img>
                 </div>
                 <h1 className="text-4xl sm:text-5xl mt-6 font-medium text-white text-center">Mateo Ledesma</h1>
-                <h2 className="text-xl sm:text-2xl mt-1 text-gray-400">{data.subheading}</h2>
+                <h2 className="text-xl sm:text-2xl mt-1 text-gray-400 text-center">{data.subheading}</h2>
               </div>
-              <p className="w-full lg:w-auto text-xl flex-1 sm:text-2xl mt-10 lg:my-auto lg:ml-14 space-y-3 text-gray-300 whitespace-pre-line">
+              <p className="w-full lg:w-auto text-xl sm:text-2xl mt-10 lg:my-auto lg:ml-14 space-y-3 text-gray-300 whitespace-pre-line lg:flex-[4]">
                 {data.text}
               </p>
             </div>
