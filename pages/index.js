@@ -1,11 +1,12 @@
 import Layout from '../components/Layout';
 import { getAboutData } from '../services/dataService';
+import Skill from '../components/Skill';
 
 export default function About({ data }) {
   return (
     <Layout>
       {data && (
-        <article>
+        <article className="w-full">
           <section>
             <h2 className="text-4xl sm:text-5xl text-white font-medium">{data.heading}</h2>
             <div className="flex flex-wrap mt-14">
@@ -16,8 +17,12 @@ export default function About({ data }) {
                     className="rounded-full object-cover w-64 mx-auto aspect-square"
                   ></img>
                 </div>
-                <h1 className="text-4xl sm:text-5xl mt-6 font-medium text-white text-center">Mateo Ledesma</h1>
-                <h2 className="text-xl sm:text-2xl mt-1 text-gray-400 text-center">{data.subheading}</h2>
+                <h1 className="text-4xl sm:text-5xl mt-6 font-medium text-white text-center">
+                  Mateo Ledesma
+                </h1>
+                <h2 className="text-xl sm:text-2xl mt-1 text-gray-400 text-center">
+                  {data.subheading}
+                </h2>
               </div>
               <p className="w-full lg:w-auto text-xl sm:text-2xl mt-10 lg:my-auto lg:ml-14 space-y-3 text-gray-300 whitespace-pre-line lg:flex-[4]">
                 {data.text}
@@ -25,21 +30,12 @@ export default function About({ data }) {
             </div>
           </section>
 
-          <section className="mt-20">
-            <h2 className="text-3xl sm:text-4xl text-white font-medium ">Habilidades</h2>
-            <div className="mt-6 gap-y-7 gap-x-20 grid grid-cols-1 lg:grid-cols-2">
-              {data.skills.map(({ name, progress }) => (
-                <div className="w-full" key={name}>
-                  <div className="text-xl sm:text-2xl text-gray-300">
-                    {name}
-                  </div>
-                  <div className="w-full relative h-4 mt-2 border-2 border-pink-600 rounded-sm">
-                    <div
-                      className={`absolute h-full bg-pink-600`}
-                      style={{ width: progress + '%' }}
-                    ></div>
-                  </div>
-                </div>
+          <section className="mt-20 w-full">
+            <h2 className="text-3xl sm:text-4xl text-white font-medium">Mis habilidades</h2>
+
+            <div className="mt-6 p-6 w-full snap-mandatory snap-x overflow-x-auto flex items-center gap-x-14">
+              {data.skills.map(({ name, icon }) => (
+                <Skill name={name} icon={`${data.assetsURL}/icons/${icon}`} key={name} />
               ))}
             </div>
           </section>
@@ -57,7 +53,6 @@ function calculateAge(date) {
 
 export async function getStaticProps() {
   const data = await getAboutData();
-
   data.text = data.text.replace('%YEARS%', calculateAge(new Date(2000, 8, 14)));
 
   return { props: { data }, revalidate: 60 };
