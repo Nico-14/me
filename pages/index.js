@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import { getAboutData } from '../services/dataService';
-import Skill from '../components/Skill';
+import SkillsCarousel from "../components/SkillsCarousel";
 
 export default function About({ data }) {
   return (
@@ -32,12 +32,7 @@ export default function About({ data }) {
 
           <section className="mt-20 w-full">
             <h2 className="text-3xl sm:text-4xl text-white font-medium">Mis habilidades</h2>
-
-            <div className="mt-6 p-6 w-full snap-mandatory snap-x overflow-x-auto flex items-center gap-x-14">
-              {data.skills.map(({ name, icon }) => (
-                <Skill name={name} icon={`${data.assetsURL}/icons/${icon}`} key={name} />
-              ))}
-            </div>
+            <SkillsCarousel skills={data.skills} assetsUrl={data.assetsURL} />
           </section>
         </article>
       )}
