@@ -47,7 +47,7 @@ const Card = ({ project }) => (
   </a>
 );
 
-export default function Portfolio({ data }) {
+export default function Projects({ data }) {
   return (
     <Layout>
       <section className="w-full">

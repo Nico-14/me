@@ -5,12 +5,6 @@ import { useState } from 'react';
 import IconLink from './IconLink';
 import * as Icons from './Icons';
 
-const navLinks = [
-  { href: '/', text: 'Inicio' },
-  { href: '/contact', text: 'Contacto' },
-  { href: '/portfolio', text: 'Portfolio' },
-];
-
 export default function Layout({ children }) {
   const { pathname } = useRouter();
   const [isMenuShowing, setIsMenuShowing] = useState();
@@ -31,20 +25,36 @@ export default function Layout({ children }) {
             isMenuShowing ? 'flex absolute' : 'hidden'
           } top-full left-0 flex-col w-full pb-4 px-6 sm:static sm:flex sm:flex-row sm:items-center sm:w-auto sm:p-0 mx-auto bg-black text-gray-400`}
         >
-          {navLinks.map(({ href, text }) => (
-            <Link href={href} key={href}>
-              <a
-                className={`font-medium hover:text-gray-100 ${
-                  pathname === href ? 'text-white' : ''
-                } py-2 sm:py-0`}
-              >
-                {text}
-              </a>
-            </Link>
-          ))}
+          <Link href="/">
+            <a
+              className={`font-medium hover:text-gray-100 ${
+                pathname === href ? 'text-white' : ''
+              } py-2 sm:py-0`}
+            >
+              Inicio
+            </a>
+          </Link>
+          <Link href="/projects">
+            <a
+              className={`font-medium hover:text-gray-100 ${
+                pathname === href ? 'text-white' : ''
+              } py-2 sm:py-0`}
+            >
+              Proyectos
+            </a>
+          </Link>
+          <a
+            href="mailto:mateo.14.ledesma@gmail.com"
+            title="Email"
+            className={`font-medium hover:text-gray-100 ${
+              pathname === href ? 'text-white' : ''
+            } py-2 sm:py-0`}
+          >
+            Contáctame
+          </a>
           <a
             href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/cv.pdf"
-            download="CV Mateo Ledesma.pdf"
+            target="_blank"
             className="font-medium px-4 py-2 mt-2 sm:mt-0 text-white border-2 rounded-sm border-white hover:bg-white hover:text-black"
           >
             Descargar CV
@@ -69,14 +79,8 @@ export default function Layout({ children }) {
           <IconLink href="https://github.com/mateo-14" title="GitHub">
             <Icons.Github className="w-6 h-6" />
           </IconLink>
-          <IconLink href="https://wa.me/5493435047916" title="WhatsApp">
-            <Icons.Whatsapp className="w-6 h-6" />
-          </IconLink>
           <IconLink href="mailto:mateo.14.ledesma@gmail.com" title="Email">
             <Icons.Mail className="w-6 h-6" />
-          </IconLink>
-          <IconLink href="https://instagram.com/null14__" title="Instagram">
-            <Icons.Instagram className="w-6 h-6" />
           </IconLink>
         </div>
       </footer>
