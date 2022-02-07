@@ -28,7 +28,7 @@ export default function Layout({ children }) {
           <Link href="/">
             <a
               className={`font-medium hover:text-gray-100 ${
-                pathname === href ? 'text-white' : ''
+                pathname === '/' ? 'text-white' : ''
               } py-2 sm:py-0`}
             >
               Inicio
@@ -37,7 +37,7 @@ export default function Layout({ children }) {
           <Link href="/projects">
             <a
               className={`font-medium hover:text-gray-100 ${
-                pathname === href ? 'text-white' : ''
+                pathname === '/projects' ? 'text-white' : ''
               } py-2 sm:py-0`}
             >
               Proyectos
@@ -46,15 +46,12 @@ export default function Layout({ children }) {
           <a
             href="mailto:mateo.14.ledesma@gmail.com"
             title="Email"
-            className={`font-medium hover:text-gray-100 ${
-              pathname === href ? 'text-white' : ''
-            } py-2 sm:py-0`}
+            className={`font-medium hover:text-gray-100 py-2 sm:py-0`}
           >
             Contáctame
           </a>
           <a
             href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/cv.pdf"
-            target="_blank"
             className="font-medium px-4 py-2 mt-2 sm:mt-0 text-white border-2 rounded-sm border-white hover:bg-white hover:text-black"
           >
             Descargar CV
