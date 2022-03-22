@@ -1,6 +1,9 @@
 import Layout from '../components/Layout';
-import { getAboutData } from '../services/dataService';
-import SkillsCarousel from "../components/SkillsCarousel";
+import { getAboutData, getProjects } from '../services/dataService';
+import SkillsCarousel from '../components/SkillsCarousel';
+import Project from '../components/Project';
+import Link from 'next/link';
+import ButtonLink from '../components/ButtonLink';
 
 export default function About({ data }) {
   return (
@@ -8,12 +11,12 @@ export default function About({ data }) {
       {data && (
         <article className="w-full">
           <section>
-            <h2 className="text-4xl sm:text-5xl text-white font-medium">{data.heading}</h2>
+            <h2 className="text-4xl sm:text-5xl text-white font-medium">{data.about.heading}</h2>
             <div className="flex flex-wrap mt-14">
               <div className="w-full text-center lg:w-auto lg:text-left lg:flex-[2]">
                 <div className="text-center">
                   <img
-                    src={data.profileImg}
+                    src={data.about.profileImg}
                     className="rounded-full object-cover w-64 mx-auto aspect-square"
                   ></img>
                 </div>
@@ -21,18 +24,31 @@ export default function About({ data }) {
                   Mateo Ledesma
                 </h1>
                 <h2 className="text-xl sm:text-2xl mt-1 text-gray-400 text-center">
-                  {data.subheading}
+                  {data.about.subheading}
                 </h2>
               </div>
               <p className="w-full lg:w-auto text-xl sm:text-2xl mt-10 lg:my-auto lg:ml-14 space-y-3 text-gray-300 whitespace-pre-line lg:flex-[4]">
-                {data.text}
+                {data.about.text}
               </p>
             </div>
           </section>
 
-          <section className="mt-20 w-full">
-            <h2 className="text-3xl sm:text-4xl text-white font-medium">Mis habilidades</h2>
-            <SkillsCarousel skills={data.skills} assetsUrl={data.assetsURL} />
+          <section className="mt-20 w-full flex flex-col">
+            <h2 className="text-3xl sm:text-4xl text-white font-medium">Proyectos destacados</h2>
+            <div className="mt-8 grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              {data.projects
+                .filter((project) => project.featured)
+                .map((project) => (
+                  <Project project={project} key={project.name} />
+                ))}
+            </div>
+            <Link href="/projects" passHref>
+              <ButtonLink className="mt-4 self-start">Ver más proyectos</ButtonLink>
+            </Link>
+          </section>
+          <section className="mt-14 w-full">
+            <h2 className="text-3xl sm:text-4xl text-white font-medium">Habilidades</h2>
+            <SkillsCarousel skills={data.about.skills} assetsUrl={data.about.assetsURL} />
           </section>
         </article>
       )}
@@ -47,8 +63,8 @@ function calculateAge(date) {
 }
 
 export async function getStaticProps() {
-  const data = await getAboutData();
-  data.text = data.text.replace('%YEARS%', calculateAge(new Date(2000, 8, 14)));
+  const [about, projects] = await Promise.all([getAboutData(), getProjects()]);
 
-  return { props: { data }, revalidate: 60 };
+  about.text = about.text.replace('%YEARS%', calculateAge(new Date(2000, 8, 14)));
+  return { props: { data: { about, projects: projects.projects } }, revalidate: 60 };
 }
