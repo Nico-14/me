@@ -2,6 +2,7 @@ import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import ButtonLink from './ButtonLink';
 import IconLink from './IconLink';
 import * as Icons from './Icons';
 
@@ -50,12 +51,12 @@ export default function Layout({ children }) {
           >
             Contáctame
           </a>
-          <a
+          <ButtonLink
             href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/cv.pdf"
-            className="font-medium px-4 py-2 mt-2 sm:mt-0 text-white border-2 rounded-sm border-white hover:bg-white hover:text-black"
+            className="mt-2 sm:mt-0"
           >
             Descargar CV
-          </a>
+          </ButtonLink>
         </nav>
 
         <button
