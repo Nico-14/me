@@ -1,9 +1,9 @@
 import Layout from '../components/Layout';
 import { getAboutData, getProjects } from '../services/dataService';
-import SkillsCarousel from '../components/SkillsCarousel';
 import Project from '../components/Project';
 import Link from 'next/link';
 import ButtonLink from '../components/ButtonLink';
+import Skill from '../components/Skill';
 
 export default function About({ data }) {
   return (
@@ -35,7 +35,7 @@ export default function About({ data }) {
 
           <section className="mt-20 w-full flex flex-col">
             <h2 className="text-3xl sm:text-4xl text-white font-medium">Proyectos destacados</h2>
-            <div className="mt-8 grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {data.projects
                 .filter((project) => project.featured)
                 .map((project) => (
@@ -48,7 +48,11 @@ export default function About({ data }) {
           </section>
           <section className="mt-14 w-full">
             <h2 className="text-3xl sm:text-4xl text-white font-medium">Habilidades</h2>
-            <SkillsCarousel skills={data.about.skills} assetsUrl={data.about.assetsURL} />
+            <div className={`w-full mt-10 gap-16 flex flex-wrap justify-center`}>
+              {data.about.skills.map(({ name, icon }) => (
+                <Skill name={name} icon={`${data.about.assetsURL}/icons/${icon}`} key={name} />
+              ))}
+            </div>
           </section>
         </article>
       )}
