@@ -44,6 +44,16 @@ export default function Layout({ children }) {
               Proyectos
             </a>
           </Link>
+          <Link href="/cv">
+            <a
+              className={`font-medium hover:text-gray-100 ${
+                pathname === '/cv' ? 'text-white' : ''
+              } py-2 sm:py-0`}
+              target="_blank"
+            >
+              CV Online
+            </a>
+          </Link>
           <a
             href="mailto:mateo.14.ledesma@gmail.com"
             title="Email"
