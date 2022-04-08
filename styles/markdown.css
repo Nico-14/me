@@ -1,0 +1,23 @@
+.markdown h2 {
+  @apply text-2xl;
+  @apply font-medium;
+  @apply mb-2;
+  @apply mt-2;
+}
+
+.markdown p {
+  @apply leading-tight;
+}
+.markdown ul {
+  @apply list-disc;
+  @apply ml-8;
+  font-size: 0.92rem;
+}
+
+.markdown a {
+  @apply text-blue-600;
+}
+
+.markdown strong {
+  @apply font-medium;
+}
