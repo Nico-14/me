@@ -94,12 +94,12 @@ export default function Contact() {
             maxLength={2140}
           />
           <button
-            className={`text-white py-2 px-8 font-medium bg-blue-500 rounded-sm disabled:opacity-75 self-start mt-2 ${
-              isLoading ? 'animate-pulse' : ''
+            className={`text-white py-2 font-medium bg-blue-500 rounded-sm mt-2 ${
+              isLoading ? 'animate-pulse opacity-90' : 'disabled:opacity-75'
             }`}
             disabled={!isValid || isLoading}
           >
-            Enviar
+            {isLoading ? 'Enviando...' : 'Enviar'}
           </button>
           {isSuccess === true && (
             <>
