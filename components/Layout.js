@@ -44,6 +44,16 @@ export default function Layout({ children }) {
               Proyectos
             </a>
           </Link>
+
+          <Link href="/contact">
+            <a
+              className={`font-medium hover:text-gray-100 ${
+                pathname === '/contact' ? 'text-white' : ''
+              } py-2 sm:py-0`}
+            >
+              Contacto
+            </a>
+          </Link>
           <Link href="/cv">
             <a
               className={`font-medium hover:text-gray-100 ${
@@ -54,13 +64,6 @@ export default function Layout({ children }) {
               CV Online
             </a>
           </Link>
-          <a
-            href="mailto:mateo.14.ledesma@gmail.com"
-            title="Email"
-            className={`font-medium hover:text-gray-100 py-2 sm:py-0`}
-          >
-            Contáctame
-          </a>
           <ButtonLink
             href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/cv.pdf"
             className="mt-2 sm:mt-0"

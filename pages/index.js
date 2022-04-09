@@ -2,7 +2,6 @@ import Layout from '../components/Layout';
 import { getAboutData, getProjects } from '../services/dataService';
 import Project from '../components/Project';
 import Link from 'next/link';
-import ButtonLink from '../components/ButtonLink';
 import Skill from '../components/Skill';
 
 export default function About({ data }) {
@@ -43,7 +42,9 @@ export default function About({ data }) {
                 ))}
             </div>
             <Link href="/projects" passHref>
-              <ButtonLink className="mt-4 self-start">Ver más proyectos</ButtonLink>
+              <a className="text-white py-2 px-4 font-medium bg-blue-500 rounded-sm mt-4 self-start">
+                Ver más proyectos
+              </a>
             </Link>
           </section>
           <section className="mt-14 w-full">
