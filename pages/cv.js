@@ -20,7 +20,7 @@ export default function Cv({ content, skills }) {
             />
             <div className="text-center">
               <h1 className="text-3xl font-medium">Mateo Ledesma</h1>
-              <h2 className="text-xl text-gray-600">Software Developer</h2>
+              <h2 className="text-xl text-gray-600">Full Stack Developer</h2>
             </div>
             <ul className="contact-list font-medium break-all text-[0.92rem] text-gray-600">
               <li className="flex items-center gap-2">
