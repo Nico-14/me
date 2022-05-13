@@ -1,8 +1,8 @@
-import Layout from '../components/Layout';
-import { getAboutData, getProjects } from '../services/dataService';
-import Project from '../components/Project';
 import Link from 'next/link';
 import ButtonLink from '../components/ButtonLink';
+import Layout from '../components/Layout';
+import Project from '../components/Project';
+import { getAboutData, getProjects } from '../services/dataService';
 
 export default function About({ data }) {
   return (

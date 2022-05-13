@@ -1,5 +1,4 @@
 import { useRouter } from 'next/dist/client/router';
-import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 import ButtonLink from './ButtonLink';
@@ -16,14 +15,6 @@ export default function Layout({ children }) {
 
   return (
     <div className="flex flex-col min-h-screen bg-zinc-900">
-      <Head>
-        <title>Mateo Ledesma</title>
-        <link rel="icon" href="/favicon.svg" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
       <header className="flex justify-center sticky sm:static top-0 z-10 py-4 px-4 sm:p-0 bg-zinc-800 sm:bg-transparent">
         <nav
           className={`gap-x-5 ${
