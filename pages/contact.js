@@ -65,7 +65,7 @@ export default function Contact() {
           >
             WhatsApp a +54 9 343-5047916
           </a>{' '}
-          o un email con el siguiente formulario 👇🏻
+          o un mail con el siguiente formulario 👇🏻
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-y-3">
           <TextInput
