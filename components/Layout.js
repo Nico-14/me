@@ -15,7 +15,7 @@ export default function Layout({ children }) {
 
   return (
     <div className="flex flex-col min-h-screen bg-zinc-900">
-      <header className="flex justify-center sticky sm:static top-0 z-10 py-4 px-4 sm:p-0 bg-zinc-800 sm:bg-transparent">
+      <header className="flex justify-center sticky sm:static top-0 z-10 py-2 sm:p-0 bg-zinc-800 sm:bg-transparent">
         <nav
           className={`gap-x-5 ${
             isMenuShowing ? 'flex absolute' : 'hidden'
@@ -68,13 +68,13 @@ export default function Layout({ children }) {
         </nav>
 
         <button
-          className={`sm:hidden ml-auto text-white ${isMenuShowing ? 'opacity-1' : 'opacity-75'}`}
+          className={`sm:hidden ml-auto mr-2 text-white ${isMenuShowing ? 'opacity-1' : 'opacity-75'}`}
           onClick={handleMenuClick}
         >
           <Icons.ChevronDown className="h-9 w-9" />
         </button>
       </header>
-      <main className="flex-1 px-6 md:px-20 flex justify-center container mx-auto">{children}</main>
+      <main className="flex-1 px-6 md:px-20 flex justify-center container mx-auto mt-4 sm:mt-0">{children}</main>
       <footer className="flex justify-center">
         <div className="flex mb-4 mt-6 gap-x-3 ">
           <IconLink href="https://www.linkedin.com/in/mateo-ledesma/" title="LinkedIn">

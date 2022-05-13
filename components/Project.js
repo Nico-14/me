@@ -2,7 +2,7 @@ import { Github } from './Icons';
 
 const Project = ({ project }) => (
   <a href={project.link} target="_blank">
-    <article className="cursor-pointer rounded-lg overflow-hidden bg-zinc-800 h-full flex flex-col group">
+    <article className="cursor-pointer rounded-lg overflow-hidden bg-zinc-900 h-full flex flex-col group">
       <div className="aspect-[16/8] overflow-hidden flex">
         <img
           src={project.images[0]}
