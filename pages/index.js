@@ -20,7 +20,7 @@ export default function About({ data }) {
                 </div>
                 <h1 className="text-4xl sm:text-5xl mt-6 text-white text-center">Mateo Ledesma</h1>
                 <h2 className="text-4xl font-bold mt-2 text-emerald-500 text-center">
-                  {data.subheading}
+                  {data.about.subheading}
                 </h2>
               </div>
               <p className="text-xl sm:text-2xl mt-8 text-zinc-300 whitespace-pre-line lg:flex-[4]">
