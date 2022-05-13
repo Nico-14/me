@@ -55,18 +55,17 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="flex flex-col max-w-3xl w-full">
-        <h1 className="text-4xl sm:text-5xl text-white font-medium mb-4">Contacto</h1>
-        <p className="text-white mb-3 text-xl">
+      <section className="flex flex-col max-w-3xl w-full self-center">
+        <p className="text-white mb-6 text-xl">
           Envíame un{' '}
           <a
-            className="text-blue-500"
+            className="text-emerald-500"
             href="https://wa.me/5493435047916?text=Hola!%20Cómo%20estás?"
             target="_blank"
           >
             WhatsApp a +54 9 343-5047916
           </a>{' '}
-          o un mensaje con el siguiente formulario 👇🏻
+          o un email con el siguiente formulario 👇🏻
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-y-3">
           <TextInput
@@ -94,7 +93,7 @@ export default function Contact() {
             maxLength={2140}
           />
           <button
-            className={`text-white py-2 font-medium bg-blue-500 rounded-sm mt-2 ${
+            className={`text-white py-2 font-bold bg-emerald-500 rounded-xl mt-2 ${
               isLoading ? 'animate-pulse opacity-90' : 'disabled:opacity-75'
             }`}
             disabled={!isValid || isLoading}

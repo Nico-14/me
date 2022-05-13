@@ -1,6 +1,6 @@
 const TextInput = ({ onChange, placeholder, value, disabled, maxLength }) => (
   <input
-    className="border-white/20 border text-white bg-black px-3 py-2 outline-none focus:border-white/25 rounded-sm disabled:placeholder:text-gray-600 disabled:text-gray-500"
+    className="text-white bg-zinc-800 px-3 py-2 outline-none  rounded-xl disabled:placeholder:text-zinc-600 disabled:text-zinc-500"
     placeholder={placeholder}
     onChange={onChange}
     value={value}

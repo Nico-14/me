@@ -15,20 +15,24 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div className={`flex flex-col min-h-screen bg-black`}>
+    <div className="flex flex-col min-h-screen bg-zinc-900">
       <Head>
         <title>Mateo Ledesma</title>
         <link rel="icon" href="/favicon.svg" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
-      <header className="flex w-full flex-col sm:flex-row px-4 md:px-14 py-4 sm:pt-4 sticky sm:static top-0 z-10 bg-black">
+      <header className="flex justify-center sticky sm:static top-0 z-10 py-4 px-4 sm:p-0 bg-zinc-800 sm:bg-transparent">
         <nav
           className={`gap-x-5 ${
             isMenuShowing ? 'flex absolute' : 'hidden'
-          } top-full left-0 flex-col w-full pb-4 px-6 sm:static sm:flex sm:flex-row sm:items-center sm:w-auto sm:p-0 mx-auto bg-black text-gray-400`}
+          } text-zinc-400 bg-zinc-800 px-6 pb-4 w-full top-full left-0 flex-col sm:w-auto sm:static sm:flex sm:flex-row sm:items-center sm:py-3 sm:my-6 sm:rounded-xl transition`}
         >
           <Link href="/">
             <a
-              className={`font-medium hover:text-gray-100 ${
+              className={`font-bold hover:text-zinc-100 transition-colors ${
                 pathname === '/' ? 'text-white' : ''
               } py-2 sm:py-0`}
             >
@@ -37,7 +41,7 @@ export default function Layout({ children }) {
           </Link>
           <Link href="/projects">
             <a
-              className={`font-medium hover:text-gray-100 ${
+              className={`font-bold hover:text-zinc-100 transition-colors ${
                 pathname === '/projects' ? 'text-white' : ''
               } py-2 sm:py-0`}
             >
@@ -47,7 +51,7 @@ export default function Layout({ children }) {
 
           <Link href="/contact">
             <a
-              className={`font-medium hover:text-gray-100 ${
+              className={`font-bold hover:text-zinc-100 transition-colors ${
                 pathname === '/contact' ? 'text-white' : ''
               } py-2 sm:py-0`}
             >
@@ -56,7 +60,7 @@ export default function Layout({ children }) {
           </Link>
           <Link href="/cv">
             <a
-              className={`font-medium hover:text-gray-100 ${
+              className={`font-bold hover:text-zinc-100 transition-colors ${
                 pathname === '/cv' ? 'text-white' : ''
               } py-2 sm:py-0`}
               target="_blank"
@@ -79,13 +83,11 @@ export default function Layout({ children }) {
           <Icons.ChevronDown className="h-9 w-9" />
         </button>
       </header>
-      <main className="flex-1 px-6 md:px-20 py-12 flex justify-center container mx-auto">
-        {children}
-      </main>
-      <footer className="flex">
-        <div className="flex gap-x-3 py-4 px-2 mx-auto">
+      <main className="flex-1 px-6 md:px-20 flex justify-center container mx-auto">{children}</main>
+      <footer className="flex justify-center">
+        <div className="flex mb-4 mt-6 gap-x-3 ">
           <IconLink href="https://www.linkedin.com/in/mateo-ledesma/" title="LinkedIn">
-            <Icons.Linkedin className="w-4 h-4" />
+            <Icons.Linkedin className="w-4 h-4 " />
           </IconLink>
           <IconLink href="https://github.com/mateo-14" title="GitHub">
             <Icons.Github className="w-6 h-6" />
