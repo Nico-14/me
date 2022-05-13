@@ -55,7 +55,7 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="flex flex-col max-w-3xl w-full self-center bg-zinc-800 p-8 rounded-xl">
+      <section className="flex flex-col max-w-3xl w-full self-center bg-zinc-800 px-4 py-6 sm:p-8 rounded-xl">
         <p className="text-white mb-6 text-xl">
           Envíame un{' '}
           <a

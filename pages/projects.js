@@ -5,7 +5,7 @@ import { getProjects } from '../services/dataService';
 export default function Projects({ data }) {
   return (
     <Layout>
-      <section className="w-full my-4 bg-zinc-800 p-8 rounded-xl">
+      <section className="w-full my-4 bg-zinc-800 px-4 py-6 sm:p-8 rounded-xl">
         <div className="grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           {data?.projects?.map((project) => (
             <Project project={project} key={project.name} />
