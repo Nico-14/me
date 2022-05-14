@@ -29,7 +29,7 @@ export default function About({ data }) {
             </div>
           </section>
 
-          <section className="mt-24 w-full flex flex-col p-4 sm:p-8 bg-zinc-800 rounded-xl">
+          <section className="mt-12 mb-4 w-full flex flex-col p-4 sm:p-8 bg-zinc-800 rounded-xl">
             <h2 className="text-3xl sm:text-4xl text-emerald-500 font-bold">Proyectos destacados</h2>
             <div className="mt-6 grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {data.projects
