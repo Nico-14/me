@@ -2,11 +2,11 @@ import { Github } from './Icons';
 
 const Project = ({ project }) => (
   <a href={project.link} target="_blank">
-    <article className="cursor-pointer rounded-lg overflow-hidden bg-zinc-900 h-full flex flex-col group">
-      <div className="aspect-[16/8] overflow-hidden flex">
+    <article className="cursor-pointer rounded-lg overflow-hidden bg-zinc-900/40 h-full flex flex-col group">
+      <div className="aspect-[16/8] overflow-hidden flex mx-5 my-4">
         <img
           src={project.images[0]}
-          className="object-cover w-full group-hover:scale-110 group-active:scale-110 transition"
+          className="object-cover w-full group-hover:scale-110 group-active:scale-110 transition rounded"
           alt={`${project.name} demo`}
         ></img>
       </div>
