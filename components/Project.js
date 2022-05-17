@@ -26,14 +26,13 @@ const Project = ({ project }) => (
         </div>
       </div>
       <div className="flex flex-wrap gap-3 mt-auto">
-        <ButtonLink
-          className="bg-zinc-700 flex gap-2 px-3"
-          href={project.repo}
-          target="_blank"
-        >
-          <Github className="h-5 w-5 fill-white" />
-          Repositorio
-        </ButtonLink>
+        {project.repos.map((repo, i) => (
+          <ButtonLink className="bg-zinc-700 flex gap-2 px-3" href={repo.url} target="_blank" key={i}>
+            <Github className="h-5 w-5 fill-white" />
+            {repo.name || 'Repositorio'}
+          </ButtonLink>
+        ))}
+
         <ButtonLink className="flex gap-2 px-3" href={project.link} target="_blank">
           <LinkIcon className="h-5 w-5 fill-white" />
           Abrir
