@@ -1,4 +1,5 @@
 import { useEffect, useState, useReducer } from 'react';
+import { flushSync } from 'react-dom';
 import Layout from '../components/Layout';
 import TextArea from '../components/TextArea';
 import TextInput from '../components/TextInput';
@@ -36,13 +37,13 @@ export default function Contact() {
 
   const isValid = name.trim() && message.trim() && emailIsValid(email);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     setIsLoading(true);
     setIsSuccess(null);
     sendMail({ email, name, message })
       .then(() => {
-        dispatch({ type: 'clear' });
+        flushSync(() => dispatch({ type: 'clear' })); // Clear first. Avoid batching update.
         setIsSuccess(true);
       })
       .catch(() => setIsSuccess(false))
@@ -72,7 +73,7 @@ export default function Contact() {
             placeholder="Nombre"
             value={name}
             disabled={isLoading}
-            onChange={(e) => dispatch({ type: 'name/change', payload: e.target.value })}
+            onChange={e => dispatch({ type: 'name/change', payload: e.target.value })}
             maxLength={50}
           />
 
@@ -81,7 +82,7 @@ export default function Contact() {
             type="email"
             value={email}
             disabled={isLoading}
-            onChange={(e) => dispatch({ type: 'email/change', payload: e.target.value })}
+            onChange={e => dispatch({ type: 'email/change', payload: e.target.value })}
             maxLength={254}
           />
           <TextArea
@@ -89,7 +90,7 @@ export default function Contact() {
             value={message}
             rows={8}
             disabled={isLoading}
-            onChange={(e) => dispatch({ type: 'message/change', payload: e.target.value })}
+            onChange={e => dispatch({ type: 'message/change', payload: e.target.value })}
             maxLength={2140}
           />
           <button
@@ -100,16 +101,13 @@ export default function Contact() {
           >
             {isLoading ? 'Enviando...' : 'Enviar'}
           </button>
-          {isSuccess === true && (
+          {isSuccess && (
             <>
-              <p className="text-white text-3xl mt-2">📩 Mensaje enviado!</p>
-              <p className="text-white text-2xl">
-                Te responderé en las próximas horas al email ingresado 😎
-              </p>
+              <p className="text-white text-xl lg:text-3xl mt-2">Mail enviado ✅</p>
             </>
           )}
           {isSuccess === false && (
-            <p className="text-white text-3xl mt-2">
+            <p className="text-white text-xl lg:text-3xl mt-2">
               😵 Ha ocurrido un error, vuelve a intentarlo en los próximos minutos!
             </p>
           )}
