@@ -15,7 +15,7 @@ function NavLink({ children, href }) {
           pathname === href ? 'text-white' : ''
         } py-2 sm:py-0`}
       >
-        Inicio
+        {children}
       </a>
     </Link>
   );
