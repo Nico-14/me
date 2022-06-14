@@ -103,19 +103,11 @@ export default function Cv({ content, skills }) {
           </div>
           <section className="mt-6">
             <h1 className="font-medium text-2xl">Habilidades</h1>
-            <div className="grid grid-cols-2 text-sm font-medium gap-x-6 gap-y-3 mt-2 text-gray-800 content-end">
+            <ul className="grid grid-cols-2 text-md gap-y-2 gap-x-4 mt-2 list-disc pl-6">
               {skills.map((skill, index) => (
-                <div className="flex flex-col justify-end" key={index}>
-                  <span>{skill.name}</span>
-                  <div className="h-2 border rounded-sm border-blue-600">
-                    <div
-                      className="h-full bg-blue-600"
-                      style={{ width: `${skill.progress}%` }}
-                    ></div>
-                  </div>
-                </div>
+                <li key={index}>{skill}</li>
               ))}
-            </div>
+            </ul>
           </section>
         </div>
         <div dangerouslySetInnerHTML={{ __html: content }} className="markdown px-4"></div>
