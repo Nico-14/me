@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Layout from '../components/Layout';
 import Project from '../components/Project';
 import useOnClickOutside from '../hooks/useClickOutside';
@@ -66,8 +66,8 @@ function Search({ options, onChange, selectedOptions }) {
           onFocus={() => setIsSelectShowing(true)}
           className="bg-transparent outline-none w-full"
         ></input>
-        {isSelectShowing && !!value.length && !!filteredOptions.length && (
-          <ul className="absolute bg-zinc-900 rounded-xl w-full mt-4 z-10 py-1 cursor-default">
+        {isSelectShowing && !!filteredOptions.length && (
+          <ul className="absolute bg-zinc-900 rounded-xl w-full mt-4 z-10 py-1 cursor-default max-h-80 overflow-auto">
             {filteredOptions.map(option => (
               <li key={option}>
                 <button
@@ -89,7 +89,13 @@ function Search({ options, onChange, selectedOptions }) {
 }
 
 export default function Projects({ data }) {
-  const technologies = [...new Set(data.projects.map(project => project.tags).flat())];
+  const technologies = useMemo(
+    () =>
+      [...new Set(data.projects.map(project => project.tags).flat())].sort((a, b) =>
+        a.localeCompare(b)
+      ),
+    [data.projects]
+  );
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleChange = selectedOptions => {
