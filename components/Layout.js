@@ -41,7 +41,7 @@ export default function Layout({ children }) {
           <NavLink href="/contact">Contacto</NavLink>
           <ButtonLink
             href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/cv.pdf"
-            className="mt-2 sm:mt-0"
+            className="mt-2 sm:mt-0 px-5 py-2 bg-emerald-600"
           >
             Descargar CV
           </ButtonLink>

@@ -24,22 +24,26 @@ export default function About({ data }) {
                 </h2>
               </div>
               <p className="text-xl sm:text-2xl mt-8 text-zinc-300 whitespace-pre-line lg:flex-[4]">
-               {data.about.text}
+                {data.about.text}
               </p>
             </div>
           </section>
 
           <section className="mt-12 mb-4 w-full flex flex-col p-4 sm:p-8 bg-zinc-800 rounded-xl">
-            <h2 className="text-3xl sm:text-4xl text-emerald-500 font-bold">Proyectos destacados</h2>
+            <h2 className="text-3xl sm:text-4xl text-emerald-500 font-bold">
+              Proyectos destacados
+            </h2>
             <div className="mt-6 grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {data.projects
-                .filter((project) => project.featured)
-                .map((project) => (
+                .filter(project => project.featured)
+                .map(project => (
                   <Project project={project} key={project.name} />
                 ))}
             </div>
             <Link href="/projects" passHref>
-              <ButtonLink className="mt-6 self-start py-3 w-full text-center md:w-auto">Ver más proyectos</ButtonLink>
+              <ButtonLink className="mt-6 self-start px-5 py-3 w-full text-center md:w-auto bg-emerald-600">
+                Ver más proyectos
+              </ButtonLink>
             </Link>
           </section>
         </article>

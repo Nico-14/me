@@ -27,19 +27,28 @@ const Project = ({ project }) => (
       </div>
       <div className="flex flex-wrap gap-3 mt-auto">
         {project.repos.map((repo, i) => (
-          <ButtonLink className="bg-zinc-700 flex gap-2 px-3" href={repo.url} target="_blank" key={i}>
+          <ButtonLink
+            className="bg-zinc-700 flex gap-2 px-3 py-2"
+            href={repo.url}
+            target="_blank"
+            key={i}
+          >
             <Github className="h-5 w-5 fill-white" />
             {repo.name || 'Repositorio'}
           </ButtonLink>
         ))}
 
-        <ButtonLink className="flex gap-2 px-3" href={project.link} target="_blank">
+        <ButtonLink
+          className="flex gap-2 px-3 py-2 bg-emerald-600"
+          href={project.link}
+          target="_blank"
+        >
           <LinkIcon className="h-5 w-5 fill-white" />
           Abrir
         </ButtonLink>
       </div>
       <div className="flex flex-wrap gap-2 mb-4">
-        {project.tags?.map((tag) => (
+        {project.tags?.map(tag => (
           <span className="bg-zinc-700 text-zinc-300 text-sm rounded-xl px-2" key={tag}>
             {tag}
           </span>
