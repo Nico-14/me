@@ -1,6 +1,11 @@
-.markdown h2 {
+.markdown h1 {
   @apply text-2xl;
-  @apply font-medium;
+  @apply font-semibold;
+}
+
+.markdown h2 {
+  @apply text-xl;
+  @apply font-semibold;
   @apply mb-2;
   @apply mt-2;
 }
@@ -8,10 +13,19 @@
 .markdown p {
   @apply leading-tight;
 }
+
+.markdown em {
+  @apply text-gray-500;
+}
+
 .markdown ul {
   @apply list-disc;
   @apply ml-8;
   font-size: 0.92rem;
+  @apply flex;
+  @apply flex-col;
+  @apply flex-wrap;
+  @apply max-h-48
 }
 
 .markdown a {
@@ -20,4 +34,8 @@
 
 .markdown strong {
   @apply font-medium;
+}
+
+.markdown hr {
+  @apply border-gray-300;
 }

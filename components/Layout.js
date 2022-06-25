@@ -39,6 +39,7 @@ export default function Layout({ children }) {
           <NavLink href="/">Inicio</NavLink>
           <NavLink href="/projects">Proyectos</NavLink>
           <NavLink href="/contact">Contacto</NavLink>
+          <NavLink href="/cv">CV Online</NavLink>
           <ButtonLink
             href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/cv.pdf"
             className="mt-2 sm:mt-0 px-5 py-2 bg-emerald-600"
