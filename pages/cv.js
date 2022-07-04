@@ -1,16 +1,9 @@
 import { marked } from 'marked'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 import { getMarkdown } from '../services/dataService'
 
 export default function Cv({ content }) {
-  const router = useRouter()
-
-  useEffect(() => {
-    console.log(window?.history)
-  }, [])
   return (
     <div className="bg-white flex items-center justify-center py-4">
       <Head>
