@@ -41,7 +41,6 @@
   @apply border-gray-300;
 }
 
-
 .cv-header {
   display: flex;
   /* flex-direction: column; */
@@ -54,4 +53,5 @@
   width: 9rem;
   object-fit: cover;
   border-radius: 100%;
+  border: 2px rgb(37 99 235 /0.7) solid;
 }
