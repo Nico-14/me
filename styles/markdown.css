@@ -40,3 +40,18 @@
 .markdown hr {
   @apply border-gray-300;
 }
+
+
+.cv-header {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.cv-profile-img {
+  height: 9rem;
+  width: 9rem;
+  object-fit: cover;
+  border-radius: 100%;
+}

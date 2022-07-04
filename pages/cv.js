@@ -1,10 +1,16 @@
 import { marked } from 'marked'
-import { getAboutData, getMarkdown } from '../services/dataService'
 import Head from 'next/head'
-import { useRouter } from "next/router"
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { getMarkdown } from '../services/dataService'
 
 export default function Cv({ content }) {
   const router = useRouter()
+
+  useEffect(() => {
+    console.log(window?.history)
+  }, [])
   return (
     <div className="bg-white flex items-center justify-center py-4">
       <Head>
@@ -12,21 +18,19 @@ export default function Cv({ content }) {
       </Head>
 
       <div className="grid gap-y-4">
-        <button className="bg-blue-500 text-white font-semibold flex items-center gap-x-2 py-2 px-3 rounded-sm place-self-start print:hidden" onClick={() => router.back()}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+        <div className="print:hidden flex gap-4">
+          <Link href="/">
+            <a className="bg-blue-500 text-white font-semibold gap-x-2 py-2 px-4 rounded-sm">
+              Inicio
+            </a>
+          </Link>
+          <a
+            href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/CV Mateo Ledesma.pdf"
+            className="bg-blue-500 text-white font-semibold gap-x-2 py-2 px-4 rounded-sm"
           >
-            <path
-              fillRule="evenodd"
-              d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-          Volver
-        </button>
+            Descargar
+          </a>
+        </div>
         <div
           dangerouslySetInnerHTML={{ __html: content }}
           className="markdown max-w-2xl px-2"
