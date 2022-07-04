@@ -41,7 +41,7 @@ export default function Layout({ children }) {
           <NavLink href="/contact">Contacto</NavLink>
           <NavLink href="/cv">CV Online</NavLink>
           <ButtonLink
-            href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/cv.pdf"
+            href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/CV Mateo Ledesma.pdf"
             className="mt-2 sm:mt-0 px-5 py-2 bg-emerald-600"
           >
             Descargar CV
