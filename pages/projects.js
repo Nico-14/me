@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Layout from '../components/Layout'
 import Project from '../components/Project'
@@ -69,7 +70,7 @@ function Search({ options, onChange, selectedOptions }) {
           className="bg-transparent outline-none w-full"
         ></input>
         {isSelectShowing && !!filteredOptions.length && (
-          <ul className="absolute bg-[#161616] rounded w-full mt-4 z-10 py-1 cursor-default max-h-80 overflow-auto shadow-2xl shadow-purple-500/20" >
+          <ul className="absolute bg-[#161616] rounded w-full mt-4 z-10 py-1 cursor-default max-h-80 overflow-auto shadow-2xl shadow-purple-500/20">
             {filteredOptions.map(option => (
               <li key={option}>
                 <button
@@ -106,6 +107,9 @@ export default function Projects({ data }) {
 
   return (
     <Layout>
+      <Head>
+        <title>Mateo Ledesma - Proyectos</title>
+      </Head>
       <section className="my-10 sm:my-20">
         <h1 className="text-2xl sm:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max mb-2 sm:mb-6">
           Proyectos

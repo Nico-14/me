@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import ButtonLink from '../components/ButtonLink'
 import Layout from '../components/Layout'
@@ -7,6 +8,9 @@ import { getAboutData, getProjects } from '../services/dataService'
 export default function About({ data }) {
   return (
     <Layout>
+      <Head>
+        <title>Mateo Ledesma - Full Stack Developer</title>
+      </Head>
       {data && (
         <div className="flex flex-col items-center my-10 sm:my-20">
           <section className="flex items-center gap-x-10 flex-wrap lg:flex-nowrap">
