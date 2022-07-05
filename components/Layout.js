@@ -17,6 +17,10 @@ export default function Layout({ children }) {
     setIsMenuShowing(!isMenuShowing)
   }
 
+  const handleClickLink = e => {
+    if (e.target.tagName === 'A') setIsMenuShowing(false)
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-[#141414]">
       <header className="flex justify-center sticky sm:static top-0 z-10 print:hidden bg-[#141414] py-2 sm:py-0">
@@ -24,6 +28,7 @@ export default function Layout({ children }) {
           className={`gap-x-5 bg-[#141414] shadow-2xl shadow-white/10 sm:shadow-none px-4 sm:px-0 ${
             isMenuShowing ? 'flex absolute' : 'hidden'
           } py-6 text-zinc-400 w-full top-full left-0 flex-col sm:w-auto sm:static sm:flex sm:flex-row sm:items-center sm:rounded-xl transition`}
+          onClick={handleClickLink}
         >
           <NavLink href="/">Inicio</NavLink>
           <NavLink href="/#projects">Proyectos</NavLink>
