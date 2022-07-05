@@ -2,12 +2,12 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html>
+    <Html className="scroll-smooth">
       <Head>
         <title>Mateo Ledesma - Full Stack Developer</title>
         <link rel="icon" href="/favicon.svg" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;&display=swap"
           rel="stylesheet"
         />
         <meta name="title" content="Mateo Ledesma - Full Stack Developer" />

@@ -1,35 +1,25 @@
 import { marked } from 'marked'
 import Head from 'next/head'
-import Link from 'next/link'
+import Layout from '../components/Layout'
 import { getMarkdown } from '../services/dataService'
 
 export default function Cv({ content }) {
   return (
-    <div className="bg-white flex items-center justify-center py-4">
+    <Layout>
       <Head>
         <title>CV Mateo Ledesma</title>
       </Head>
 
-      <div className="grid gap-y-4">
-        <div className="print:hidden flex gap-4">
-          <Link href="/">
-            <a className="bg-blue-500 text-white font-semibold gap-x-2 py-2 px-4 rounded-sm">
-              Inicio
-            </a>
-          </Link>
-          <a
-            href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/CV Mateo Ledesma.pdf"
-            className="bg-blue-500 text-white font-semibold gap-x-2 py-2 px-4 rounded-sm"
-          >
-            Descargar
-          </a>
-        </div>
+      <div className="flex flex-col my-12 print:my-0 print:w-full">
+        <h1 className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max print:hidden">
+          Curriculum online
+        </h1>
         <div
           dangerouslySetInnerHTML={{ __html: content }}
-          className="markdown max-w-2xl px-2"
+          className="markdown ml-12 mt-10 max-w-3xl print:max-w-2xl text-white print:bg-white print:text-black print:py-4 print:mx-auto print:my-0"
         ></div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

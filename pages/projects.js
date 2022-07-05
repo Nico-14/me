@@ -1,18 +1,18 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import Layout from '../components/Layout';
-import Project from '../components/Project';
-import useOnClickOutside from '../hooks/useClickOutside';
-import { getProjects } from '../services/dataService';
+import { useEffect, useMemo, useRef, useState } from 'react'
+import Layout from '../components/Layout'
+import Project from '../components/Project'
+import useOnClickOutside from '../hooks/useClickOutside'
+import { getProjects } from '../services/dataService'
 
 function Search({ options, onChange, selectedOptions }) {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('')
 
-  const [isSelectShowing, setIsSelectShowing] = useState(false);
-  const [filteredOptions, setFilteredOptions] = useState([]);
-  const divRef = useRef();
-  const inputRef = useRef();
+  const [isSelectShowing, setIsSelectShowing] = useState(false)
+  const [filteredOptions, setFilteredOptions] = useState([])
+  const divRef = useRef()
+  const inputRef = useRef()
 
-  useOnClickOutside(divRef, () => setIsSelectShowing(false));
+  useOnClickOutside(divRef, () => setIsSelectShowing(false))
 
   useEffect(() => {
     setFilteredOptions(
@@ -21,30 +21,32 @@ function Search({ options, onChange, selectedOptions }) {
           option.toLowerCase().indexOf(value.toLowerCase()) !== -1 &&
           !selectedOptions.includes(option)
       )
-    );
-  }, [value, options, selectedOptions]);
+    )
+  }, [value, options, selectedOptions])
 
   return (
     <div
-      className="text-white bg-zinc-900 px-3 py-2 rounded-xl cursor-text mb-4 flex gap-1 items-center flex-wrap"
+      className={`text-white text-lg px-3 py-2 cursor-text flex gap-2 items-center flex-wrap border-b-2 transition ${
+        isSelectShowing ? 'border-white/60' : ' border-gray-500/30'
+      }`}
       onClick={() => inputRef.current.focus()}
       ref={divRef}
     >
       {selectedOptions.map(option => (
         <span
-          className="bg-zinc-700 text-zinc-300 text-sm rounded-xl px-2 flex items-center"
+          className="bg-zinc-800 font-medium text-white text-sm rounded-md px-3 py-1 flex items-center"
           key={option}
         >
           {option}
           <button
             title="Eliminar"
             onClick={() => {
-              onChange(selectedOptions.filter(selectedOption => selectedOption !== option));
+              onChange(selectedOptions.filter(selectedOption => selectedOption !== option))
             }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="ml-1 h-4 w-4"
+              className="ml-1 h-5 w-5 opacity-75 hover:opacity-100 transition"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -67,14 +69,14 @@ function Search({ options, onChange, selectedOptions }) {
           className="bg-transparent outline-none w-full"
         ></input>
         {isSelectShowing && !!filteredOptions.length && (
-          <ul className="absolute bg-zinc-900 rounded-xl w-full mt-4 z-10 py-1 cursor-default max-h-80 overflow-auto">
+          <ul className="absolute bg-[#161616] rounded w-full mt-4 z-10 py-1 cursor-default max-h-80 overflow-auto shadow-2xl shadow-purple-500/20" >
             {filteredOptions.map(option => (
               <li key={option}>
                 <button
-                  className="w-full text-left px-3 py-1 hover:opacity-75 transition-opacity"
+                  className="w-full text-left px-3 py-1 hover:opacity-70 transition"
                   onClick={() => {
-                    onChange([...selectedOptions, option]);
-                    setValue('');
+                    onChange([...selectedOptions, option])
+                    setValue('')
                   }}
                 >
                   {option}
@@ -85,7 +87,7 @@ function Search({ options, onChange, selectedOptions }) {
         )}
       </div>
     </div>
-  );
+  )
 }
 
 export default function Projects({ data }) {
@@ -95,18 +97,21 @@ export default function Projects({ data }) {
         a.localeCompare(b)
       ),
     [data.projects]
-  );
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  )
+  const [selectedOptions, setSelectedOptions] = useState([])
 
   const handleChange = selectedOptions => {
-    setSelectedOptions(selectedOptions);
-  };
+    setSelectedOptions(selectedOptions)
+  }
 
   return (
     <Layout>
-      <section className="w-full my-4 bg-zinc-800 px-4 py-6 sm:p-8 rounded-xl">
+      <section className="mt-24 mb-10">
+        <h1 className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max mb-10">
+          Proyectos
+        </h1>
         <Search options={technologies} onChange={handleChange} selectedOptions={selectedOptions} />
-        <div className="grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        <div className="grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mt-6">
           {data.projects
             .filter(
               project =>
@@ -118,10 +123,10 @@ export default function Projects({ data }) {
         </div>
       </section>
     </Layout>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  const data = await getProjects();
-  return { props: { data }, revalidate: 60 };
+  const data = await getProjects()
+  return { props: { data }, revalidate: 60 }
 }

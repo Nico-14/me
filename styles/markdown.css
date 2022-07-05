@@ -12,10 +12,11 @@
 
 .markdown p {
   @apply leading-tight;
+  @apply max-w-2xl;
 }
 
 .markdown em {
-  @apply text-gray-500;
+  @apply text-gray-400;
 }
 
 .markdown ul {
@@ -43,7 +44,6 @@
 
 .cv-header {
   display: flex;
-  /* flex-direction: column; */
   gap: 1.2rem;
   align-items: center;
 }
@@ -54,4 +54,36 @@
   object-fit: cover;
   border-radius: 100%;
   border: 2px rgb(37 99 235 /0.7) solid;
+}
+
+@media not print {
+  .markdown h1 {
+    @apply text-4xl;
+  }
+
+  .markdown h2 {
+    @apply text-3xl;
+  }
+
+  .markdown p {
+    @apply text-xl;
+  }
+
+  .markdown em {
+    @apply text-gray-300;
+  }
+
+  .markdown ul {
+    @apply text-lg;
+  }
+
+  .cv-profile-img {
+    height: 14rem;
+    width: 14rem;
+    border: 0;
+  }
+
+  .cv-header {
+    @apply mb-6;
+  }
 }
