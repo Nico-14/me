@@ -8,7 +8,7 @@ export default function About({ data }) {
   return (
     <Layout>
       {data && (
-        <div className="flex flex-col items-center mt-20">
+        <div className="flex flex-col items-center my-10 sm:my-20">
           <section className="flex items-center gap-x-10 flex-wrap lg:flex-nowrap">
             <img
               src={data.about.profileImg}
@@ -50,7 +50,7 @@ export default function About({ data }) {
           </section>
 
           <section
-            className="w-full flex flex-col pt-16 mt-16 sm:pt-28 sm:mt-28 mb-10 sm:mb-24 border-t border-gray-500/30"
+            className="w-full flex flex-col pt-16 mt-16 sm:pt-28 sm:mt-28 border-t border-gray-500/30"
             id="contact"
           >
             <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max">

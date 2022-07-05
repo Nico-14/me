@@ -106,7 +106,7 @@ export default function Projects({ data }) {
 
   return (
     <Layout>
-      <section className="mt-24 mb-10">
+      <section className="my-10 sm:my-20">
         <h1 className="text-2xl sm:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max mb-2 sm:mb-6">
           Proyectos
         </h1>
