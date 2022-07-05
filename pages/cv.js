@@ -16,7 +16,7 @@ export default function Cv({ content }) {
         </h1>
         <div
           dangerouslySetInnerHTML={{ __html: content }}
-          className="markdown ml-12 mt-10 max-w-3xl print:max-w-2xl text-white print:bg-white print:text-black print:py-4 print:mx-auto print:my-0"
+          className="markdown ml-0 sm:ml-12 mt-10 max-w-3xl print:max-w-2xl text-white print:bg-white print:text-black print:py-4 print:mx-auto print:my-0"
         ></div>
       </div>
     </Layout>

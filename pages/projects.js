@@ -34,7 +34,7 @@ function Search({ options, onChange, selectedOptions }) {
     >
       {selectedOptions.map(option => (
         <span
-          className="bg-zinc-800 font-medium text-white text-sm rounded-md px-3 py-1 flex items-center"
+          className="bg-zinc-800 font-semibold text-white text-sm rounded-md px-3 py-1 flex items-center"
           key={option}
         >
           {option}
@@ -107,7 +107,7 @@ export default function Projects({ data }) {
   return (
     <Layout>
       <section className="mt-24 mb-10">
-        <h1 className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max mb-10">
+        <h1 className="text-2xl sm:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max mb-2 sm:mb-6">
           Proyectos
         </h1>
         <Search options={technologies} onChange={handleChange} selectedOptions={selectedOptions} />

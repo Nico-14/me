@@ -26,7 +26,6 @@
   @apply flex;
   @apply flex-col;
   @apply flex-wrap;
-  @apply sm:max-h-48;
   @apply print:max-h-48;
 }
 
@@ -46,6 +45,7 @@
   display: flex;
   gap: 1.2rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .cv-profile-img {
@@ -75,11 +75,14 @@
 
   .markdown ul {
     @apply text-lg;
+    @apply lg:max-h-48;
   }
 
   .cv-profile-img {
-    height: 14rem;
-    width: 14rem;
+    @apply h-32;
+    @apply w-32;
+    @apply sm:h-56;
+    @apply sm:w-56;
     border: 0;
   }
 

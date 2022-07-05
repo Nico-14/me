@@ -6,7 +6,7 @@ import * as Icons from './Icons'
 
 const NavLink = ({ children, href }) => (
   <Link href={href}>
-    <a className={`font-medium hover:text-zinc-100 transition-colors py-2 sm:py-0`}>{children}</a>
+    <a className={`font-semibold hover:text-zinc-100 transition-colors py-2 sm:py-0`}>{children}</a>
   </Link>
 )
 
@@ -19,9 +19,9 @@ export default function Layout({ children }) {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#141414]">
-      <header className="flex justify-center sticky sm:static top-0 z-10 print:hidden">
+      <header className="flex justify-center sticky sm:static top-0 z-10 print:hidden bg-[#141414] py-2 sm:py-0">
         <nav
-          className={`gap-x-5 ${
+          className={`gap-x-5 bg-[#141414] shadow-none sm:shadow-2xl shadow-white/10 px-4 sm:px-0 ${
             isMenuShowing ? 'flex absolute' : 'hidden'
           } py-6 text-zinc-400 w-full top-full left-0 flex-col sm:w-auto sm:static sm:flex sm:flex-row sm:items-center sm:rounded-xl transition`}
         >

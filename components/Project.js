@@ -22,9 +22,7 @@ const Project = ({ project }) => (
             <LinkIcon className="h-5 w-5 opacity-0 group-hover:opacity-100 transition" />
           </header>
         </a>
-        <div>
-          <p className="text-gray-300 leading-5 whitespace-pre-line mt-1">{project.description}</p>
-        </div>
+        <p className="text-gray-300 leading-5 whitespace-pre-line mt-1">{project.description}</p>
       </div>
       <div className="flex flex-wrap gap-3 mt-auto">
         {project.repos.map((repo, i) => (
@@ -41,7 +39,7 @@ const Project = ({ project }) => (
       </div>
       <div className="flex flex-wrap gap-2 mb-4">
         {project.tags?.map(tag => (
-          <span className="bg-zinc-800 font-medium text-white text-sm rounded-md px-2" key={tag}>
+          <span className="bg-zinc-800 font-semibold text-white text-sm rounded-md px-2" key={tag}>
             {tag}
           </span>
         ))}
