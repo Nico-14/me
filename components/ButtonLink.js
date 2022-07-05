@@ -5,7 +5,7 @@ const ButtonLink = forwardRef(({ href, children, className, target }, ref) => (
     href={href}
     ref={ref}
     target={target}
-    className={`font-bold bg-white rounded opacity-90 hover:opacity-100 transition shadow-2xl hover:shadow-white/20 ${
+    className={`font-bold bg-white rounded opacity-90 hover:opacity-95 active:opacity-100 transition shadow-2xl hover:shadow-white/20 active:hover:shadow-white/40 ${
       className ? className : ''
     }`}
   >
