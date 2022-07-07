@@ -26,7 +26,7 @@
   @apply flex;
   @apply flex-col;
   @apply flex-wrap;
-  @apply print:max-h-48;
+  @apply print:max-h-40;
 }
 
 .markdown a {

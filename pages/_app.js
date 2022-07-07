@@ -1,5 +1,5 @@
 import 'tailwindcss/tailwind.css'
-import '../styles/markdown.css';
+import '../styles/cv.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
