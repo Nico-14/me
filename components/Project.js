@@ -6,11 +6,20 @@ const Project = ({ project }) => (
   <article className="rounded overflow-hidden border border-gray-500/30 h-full flex flex-col hover:border-gray-500/50 transition group shadow-2xl hover:shadow-white/5">
     <a href={project.link} target="_blank">
       <div className="aspect-[16/8] overflow-hidden flex">
-        <img
-          src={project.images[0]}
-          className="object-cover w-full"
-          alt={`${project.name} demo`}
-        ></img>
+        {project.images ? (
+          <img
+            src={project.images[0]}
+            className="object-cover w-full"
+            alt={`${project.name} demo`}
+          ></img>
+        ) : (
+          <div className="bg-[#141414] p-2 flex flex-col justify-center border-b border-gray-500/30">
+            <h2 className="text-3xl font-bold text-white">{project.altName || project.name}</h2>
+            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 self-start">
+              {project.subheading}
+            </h3>
+          </div>
+        )}
       </div>
     </a>
 
@@ -18,14 +27,14 @@ const Project = ({ project }) => (
       <div className="mb-1">
         <a href={project.link} target="_blank">
           <header className="flex items-center gap-x-2">
-            <h2 className="text-2xl font-semibold">{project.name}</h2>
-            <LinkIcon className="h-5 w-5 opacity-0 group-hover:opacity-100 transition" />
+            <h1 className="text-2xl font-semibold flex-1">{project.name}</h1>
+            <LinkIcon className="h-6 w-6 opacity-0 group-hover:opacity-100 transition " />
           </header>
+          <p className="text-gray-300 leading-5 whitespace-pre-line mt-1">{project.description}</p>
         </a>
-        <p className="text-gray-300 leading-5 whitespace-pre-line mt-1">{project.description}</p>
       </div>
       <div className="flex flex-wrap gap-3 mt-auto">
-        {project.repos.map((repo, i) => (
+        {project.repos?.map((repo, i) => (
           <ButtonLink
             className="text-[#141414] flex items-center gap-2 px-4 py-2"
             href={repo.url}
