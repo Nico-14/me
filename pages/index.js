@@ -23,7 +23,7 @@ export default function About({ data }) {
               <h1 className="text-3xl sm:text-6xl xl:text-7xl text-white font-bold">
                 Mateo Ledesma
               </h1>
-              <h2 className="text-2xl sm:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 sm:mt-2 lg:mt-0 mx-auto max-w-max lg:mx-0">
+              <h2 className="text-2xl sm:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 sm:mt-2 lg:mt-0 mx-auto inline lg:mx-0">
                 {data.about.subheading}
               </h2>
               <p className="text-lg sm:text-xl lg:text-2xl mt-4 text-gray-300 whitespace-pre-line max-w-3xl text-left">
@@ -57,7 +57,7 @@ export default function About({ data }) {
             className="w-full flex flex-col pt-16 mt-16 sm:pt-28 sm:mt-28 border-t border-gray-500/30"
             id="contact"
           >
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 self-start">
               Contáctame
             </h2>
             <p className="text-white mt-2 sm:mt-6 text-lg sm:text-3xl xl:text-4xl max-w-3xl">
