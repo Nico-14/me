@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 import ButtonLink from './ButtonLink'
 import IconLink from './IconLink'
@@ -12,6 +13,7 @@ const NavLink = ({ children, href }) => (
 
 export default function Layout({ children }) {
   const [isMenuShowing, setIsMenuShowing] = useState()
+  const { pathname } = useRouter()
 
   const handleMenuClick = () => {
     setIsMenuShowing(!isMenuShowing)
@@ -31,7 +33,7 @@ export default function Layout({ children }) {
           onClick={handleClickLink}
         >
           <NavLink href="/">Inicio</NavLink>
-          <NavLink href="/#projects">Proyectos</NavLink>
+          <NavLink href={pathname === '/' ? '#projects' : '/projects'}>Proyectos</NavLink>
           <NavLink href="/#contact">Contacto</NavLink>
           <NavLink href="/cv">CV Online</NavLink>
           <ButtonLink
@@ -47,6 +49,8 @@ export default function Layout({ children }) {
             isMenuShowing ? 'opacity-1' : 'opacity-75'
           }`}
           onClick={handleMenuClick}
+          type="button"
+          title="Abrir menú"
         >
           <Icons.ChevronDown className="h-9 w-9" />
         </button>

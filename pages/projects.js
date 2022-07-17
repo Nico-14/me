@@ -32,6 +32,7 @@ function Search({ options, onChange, selectedOptions }) {
       }`}
       onClick={() => inputRef.current.focus()}
       ref={divRef}
+      title="Filtrar por categoría"
     >
       {selectedOptions.map(option => (
         <span
@@ -70,21 +71,25 @@ function Search({ options, onChange, selectedOptions }) {
           className="bg-transparent outline-none w-full"
         ></input>
         {isSelectShowing && !!filteredOptions.length && (
-          <ul className="absolute bg-[#161616] rounded w-full mt-4 z-10 py-1 cursor-default max-h-80 overflow-auto shadow-2xl shadow-purple-500/20">
+          <div
+            className="absolute bg-[#161616] rounded w-full mt-4 z-10 py-1 cursor-default max-h-80 overflow-auto shadow-2xl shadow-purple-500/20"
+            role="listbox"
+          >
             {filteredOptions.map(option => (
-              <li key={option}>
-                <button
-                  className="w-full text-left px-3 py-1 hover:opacity-70 transition"
-                  onClick={() => {
-                    onChange([...selectedOptions, option])
-                    setValue('')
-                  }}
-                >
-                  {option}
-                </button>
-              </li>
+              <button
+                className="w-full text-left px-3 py-1 hover:opacity-70 transition"
+                onClick={() => {
+                  onChange([...selectedOptions, option])
+                  setValue('')
+                }}
+                role="option"
+                type="button"
+                key={option}
+              >
+                {option}
+              </button>
             ))}
-          </ul>
+          </div>
         )}
       </div>
     </div>
