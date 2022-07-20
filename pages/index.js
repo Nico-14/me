@@ -36,9 +36,9 @@ export default function About({ data }) {
             className="w-full flex flex-col pt-16 mt-16 sm:pt-28 sm:mt-28 border-t border-gray-500/30"
             id="projects"
           >
-            <h2 className="text-2xl sm:text-5xl xl:text-6xl text-white font-bold text-center">
+            <h3 className="text-2xl sm:text-5xl xl:text-6xl text-white font-bold text-center">
               Proyectos destacados
-            </h2>
+            </h3>
             <div className="mt-5 sm:mt-14 grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {data.projects
                 .filter(project => project.featured)
@@ -57,9 +57,9 @@ export default function About({ data }) {
             className="w-full flex flex-col pt-16 mt-16 sm:pt-28 sm:mt-28 border-t border-gray-500/30"
             id="contact"
           >
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 self-start">
+            <h3 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 self-start">
               Contáctame
-            </h2>
+            </h3>
             <p className="text-white mt-2 sm:mt-6 text-lg sm:text-3xl xl:text-4xl max-w-3xl">
               Mandame un WhatsApp a{' '}
               <a

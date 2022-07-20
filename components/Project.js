@@ -14,10 +14,10 @@ const Project = ({ project }) => (
           ></img>
         ) : (
           <div className="bg-[#141414] p-2 flex flex-col justify-center border-b border-gray-500/30">
-            <h2 className="text-3xl font-bold text-white">{project.altName || project.name}</h2>
-            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 self-start">
+            <span className="text-3xl font-bold text-white">{project.altName || project.name}</span>
+            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 self-start">
               {project.subheading}
-            </h3>
+            </span>
           </div>
         )}
       </div>
@@ -27,7 +27,7 @@ const Project = ({ project }) => (
       <div className="mb-1">
         <a href={project.link} target="_blank">
           <header className="flex items-center gap-x-2">
-            <h1 className="text-2xl font-semibold flex-1">{project.name}</h1>
+            <h4 className="text-2xl font-semibold flex-1">{project.name}</h4>
             <LinkIcon className="h-6 w-6 opacity-0 group-hover:opacity-100 transition " />
           </header>
           <p className="text-gray-300 leading-5 whitespace-pre-line mt-1">{project.description}</p>
