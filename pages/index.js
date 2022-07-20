@@ -15,8 +15,11 @@ export default function About({ data }) {
         <div className="flex flex-col items-center my-10 sm:my-20">
           <section className="flex items-center gap-x-10 flex-wrap lg:flex-nowrap">
             <img
-              src={data.about.profileImg}
+              src={
+                'https://raw.githubusercontent.com/mateo-14/personal-web-data/main/about/profile.jpg'
+              }
               className="rounded-full object-cover w-64 mx-auto aspect-square mb-6 lg:mb-0"
+              alt="Foto de perfil"
             ></img>
 
             <div className="text-center lg:text-left">
@@ -24,10 +27,20 @@ export default function About({ data }) {
                 Mateo Ledesma
               </h1>
               <h2 className="text-2xl sm:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 sm:mt-2 lg:mt-0 mx-auto inline lg:mx-0">
-                {data.about.subheading}
+                Full Stack Developer
               </h2>
               <p className="text-lg sm:text-xl lg:text-2xl mt-4 text-gray-300 whitespace-pre-line max-w-3xl text-left">
-                {data.about.text}
+                {`Hola 👋🏻! Me llamo Mateo y soy desarrollador Full Stack. Programo desde 2015 y aprendo desarrollo web de forma autodidacta desde 2019. Me encanta aprender e investigar tecnologías nuevas.
+                🔍💼 Actualmente estoy en busca de mi primer empleo como desarrollador Full Stack (Frontend y/o Backend).`}
+                <br />
+                <br />
+                Te invito a conocer más sobre mí en mi 📄
+                <Link href="/cv">
+                  <a className="underline hover:opacity-80 transition-opacity">
+                  curriculum
+                  </a>
+                </Link>
+                .
               </p>
             </div>
           </section>
@@ -91,8 +104,7 @@ function calculateAge(date) {
 }
 
 export async function getStaticProps() {
-  const [about, projects] = await Promise.all([getAboutData(), getProjects()])
+  const projects = await getProjects()
 
-  about.text = about.text.replace('%YEARS%', calculateAge(new Date(2000, 8, 14)))
-  return { props: { data: { about, projects: projects.projects } }, revalidate: 60 }
+  return { props: { data: { projects: projects.projects } }, revalidate: 60 }
 }
