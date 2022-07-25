@@ -30,17 +30,17 @@ export default function About({ data }) {
                 Full Stack Developer
               </h2>
               <p className="text-lg sm:text-xl lg:text-2xl mt-4 text-gray-300 whitespace-pre-line max-w-3xl text-left">
-                {`Hola 👋🏻! Me llamo Mateo y soy desarrollador Full Stack. Programo desde 2015 y aprendo desarrollo web de forma autodidacta desde 2019. Me encanta aprender e investigar tecnologías nuevas.
-                🔍💼 Actualmente estoy en busca de mi primer empleo como desarrollador Full Stack (Frontend y/o Backend).`}
+                {`Hola 👋🏻! Me llamo Mateo y soy desarrollador Full Stack. Programo desde el año 2015 y aprendo desarrollo web de manera autodidacta desde 2019.`}
                 <br />
                 <br />
                 Te invito a conocer más sobre mí en mi 📄
                 <Link href="/cv">
-                  <a className="underline hover:opacity-80 transition-opacity">
-                  curriculum
-                  </a>
-                </Link>
-                .
+                  <a className="underline hover:opacity-80 transition-opacity">curriculum</a>
+                </Link>, 
+                y a ver algunos de mis proyectos realizados haciendo{' '}
+                <Link href="/projects">
+                  <a className="underline hover:opacity-80 transition-opacity">click acá</a>
+                </Link>.
               </p>
             </div>
           </section>
