@@ -32,15 +32,14 @@ export default function About({ data }) {
               <p className="text-lg sm:text-xl lg:text-2xl mt-4 text-gray-300 whitespace-pre-line max-w-3xl text-left">
                 {`Hola 👋🏻! Me llamo Mateo y soy desarrollador Full Stack. Programo desde el año 2015 y aprendo desarrollo web de manera autodidacta desde 2019.`}
                 <br />
-                <br />
-                Te invito a conocer más sobre mí en mi 📄
+                ℹ️ Te invito a conocer más sobre mí en mi 📄
                 <Link href="/cv">
                   <a className="underline hover:opacity-80 transition-opacity">curriculum</a>
                 </Link>, 
                 y a ver algunos de mis proyectos realizados haciendo{' '}
                 <Link href="/projects">
                   <a className="underline hover:opacity-80 transition-opacity">click acá</a>
-                </Link>.
+                </Link>👈🏻.
               </p>
             </div>
           </section>
