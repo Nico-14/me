@@ -7,11 +7,11 @@ export default function Cv({ content }) {
   return (
     <Layout>
       <Head>
-        <title>Mateo Ledesma - Curriculum</title>
+        <title>Mateo Ledesma - Currículum</title>
       </Head>
       <div className="flex flex-col my-12 print:my-0 print:w-full">
         <h1 className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max print:hidden">
-          Curriculum online
+          Currículum online
         </h1>
         <div
           dangerouslySetInnerHTML={{ __html: content }}
