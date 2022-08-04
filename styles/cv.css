@@ -27,6 +27,14 @@
   @apply flex-col;
   @apply flex-wrap;
   @apply print:max-h-40;
+
+}
+
+@media (min-width: 1024px) {
+  .markdown ul {
+    @apply gap-x-12;
+    max-width: 400px;
+  }
 }
 
 .markdown a {
