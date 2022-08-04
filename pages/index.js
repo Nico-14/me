@@ -30,7 +30,7 @@ export default function About({ data }) {
                 Full Stack Developer
               </h2>
               <p className="text-lg sm:text-xl lg:text-2xl mt-4 text-gray-300 whitespace-pre-line max-w-3xl text-left">
-                {`Hola 👋🏻! Me llamo Mateo y soy desarrollador Full Stack. Comencé a programar en el año 2015 y desde 2019 me mantengo aprendiendo desarrollo web de manera autodidacta.`}
+                {`Hola 👋🏻! Me llamo Mateo y soy desarrollador Full Stack.`}
                 <br />
                 ℹ️ Te invito a conocer más sobre mí en mi 📄
                 <Link href="/cv">
