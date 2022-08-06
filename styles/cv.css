@@ -27,13 +27,8 @@
   @apply flex-col;
   @apply flex-wrap;
   @apply print:max-h-40;
-
-}
-
-@media (min-width: 1024px), print {
-  .markdown ul {
-    @apply gap-x-12;
-  }
+  @apply lg:gap-x-12;
+  @apply print:gap-x-12;
 }
 
 .markdown a {
@@ -82,7 +77,7 @@
 
   .markdown ul {
     @apply text-lg;
-    @apply lg:max-h-48;
+    @apply lg:max-h-56;
   }
 
   .cv-profile-img {
