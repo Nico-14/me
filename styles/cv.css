@@ -26,10 +26,13 @@
   @apply flex;
   @apply flex-col;
   @apply flex-wrap;
-  @apply print:grid;
-  @apply print:grid-cols-2;
   @apply lg:gap-x-12;
   @apply print:gap-x-12;
+}
+
+.markdown .tech-list ul {
+  @apply print:grid;
+  @apply print:grid-cols-2;
 }
 
 .markdown a {
