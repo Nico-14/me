@@ -36,7 +36,7 @@ export default function About({ data }) {
                 <Link href="/cv">
                   <a className="underline hover:opacity-80 transition-opacity">currículum online</a>
                 </Link>
-                📄.
+                {' 📄.'}
               </p>
             </div>
           </section>
