@@ -33,7 +33,10 @@ export default function About({ data }) {
                 {'Hola 👋🏻! Me llamo Mateo y soy desarrollador Full Stack. En esta web podrás ver los distintos '}
                 <a href="#projects" className="underline hover:opacity-80 transition-opacity">proyectos</a>
                 {' que he realizado y conocer más sobre mí en mi '} 
-                <a className="underline hover:opacity-80 transition-opacity">currículum online</a> 📄.
+                <Link href="/cv">
+                  <a className="underline hover:opacity-80 transition-opacity">currículum online</a>
+                </Link>
+                📄.
               </p>
             </div>
           </section>
