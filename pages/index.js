@@ -34,7 +34,7 @@ export default function About({ data }) {
               </p>
               <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 whitespace-pre-line max-w-3xl text-left">
                 {'Te invito a ver los distintos proyectos que he realizado haciendo '}
-                <a href="#projects" className="underline hover:opacity-80 transition-opacity">click acá</a>
+                <a href="#projects" className="underline hover:opacity-80 transition-opacity">click acá</a>.
               </p>
             </div>
           </section>
