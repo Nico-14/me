@@ -15,7 +15,7 @@ export default function About({ data }) {
         <div className="flex flex-col items-center my-20">
           <section className="self-start">
             <h1 className="text-6xl text-white font-bold">Mateo Ledesma</h1>
-            <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-max">
+            <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max">
               Full Stack Developer
             </h2>
             <p className="text-2xl mt-4 text-gray-300 whitespace-pre-line max-w-3xl">
