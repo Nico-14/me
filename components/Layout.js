@@ -6,7 +6,7 @@ import IconLink from './IconLink'
 import * as Icons from './Icons'
 
 const NavLink = ({ children, href }) => (
-  <Link href={href}>
+  <Link href={href} scroll={href[1] !== '#'}>
     <a className={`font-semibold hover:text-zinc-100 transition-colors py-2 lg:py-0`}>{children}</a>
   </Link>
 )
@@ -33,7 +33,7 @@ export default function Layout({ children }) {
           onClick={handleClickLink}
         >
           <NavLink href="/">Inicio</NavLink>
-          <NavLink href={pathname === '/' ? '#projects' : '/projects'}>Proyectos</NavLink>
+          <NavLink href={pathname === '/' ? '/#projects' : '/projects'}>Proyectos</NavLink>
           <NavLink href="/#contact">Contacto</NavLink>
           <NavLink href="/cv">CV Online</NavLink>
           <ButtonLink
