@@ -58,15 +58,7 @@ export default function About({ data }) {
               Contáctame
             </h3>
             <p className="text-white mt-6 text-3xl max-w-3xl">
-              Mandame un WhatsApp a{' '}
-              <a
-                className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
-                href="https://wa.me/5493435047916?text=Hola!%20Cómo%20estás?"
-                target="_blank"
-              >
-                +54 9 343 5047916
-              </a>{' '}
-              o un mail a{' '}
+              Mandame un mail a{' '}
               <a
                 className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 break-all"
                 href="mailto:mateo.14.ledesma@gmail.com"

@@ -35,7 +35,6 @@ export default function Layout({ children }) {
           <NavLink href="/">Inicio</NavLink>
           <NavLink href={pathname === '/' ? '/#projects' : '/projects'}>Proyectos</NavLink>
           <NavLink href="/#contact">Contacto</NavLink>
-          <NavLink href="/cv">CV Online</NavLink>
           <ButtonLink
             href="https://raw.githubusercontent.com/mateo-14/personal-web-data/main/CV Mateo Ledesma.pdf"
             className="mt-2 lg:mt-0 px-6 py-3 text-[#1B1F24]"
