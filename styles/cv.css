@@ -47,21 +47,6 @@
   @apply border-gray-300;
 }
 
-.cv-header {
-  display: flex;
-  gap: 1.2rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.cv-profile-img {
-  height: 9rem;
-  width: 9rem;
-  object-fit: cover;
-  border-radius: 100%;
-  border: 2px rgb(37 99 235 /0.7) solid;
-}
-
 @media not print {
   .markdown h1 {
     @apply text-4xl;
@@ -82,17 +67,5 @@
   .markdown ul {
     @apply text-lg;
     @apply lg:max-h-56;
-  }
-
-  .cv-profile-img {
-    @apply h-32;
-    @apply w-32;
-    @apply sm:h-56;
-    @apply sm:w-56;
-    border: 0;
-  }
-
-  .cv-header {
-    @apply mb-6;
   }
 }
