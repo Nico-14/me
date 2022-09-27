@@ -57,7 +57,7 @@ export default function Layout({ children }) {
       <main className="flex-1 flex px-6 md:px-20 container mx-auto mt-4 lg:mt-0 print:p-0 print:m-0">
         {children}
       </main>
-      <footer className="flex justify-center print:hidden">
+      <footer className="flex justify-center print:hidden mt-4">
         <div className="flex mb-4 mt-6 gap-x-3">
           <IconLink href="https://www.linkedin.com/in/mateo-ledesma/" title="LinkedIn">
             <Icons.Linkedin className="w-4 h-4" />

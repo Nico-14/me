@@ -115,7 +115,7 @@ export default function Projects({ data }) {
       <Head>
         <title>Mateo Ledesma - Proyectos</title>
       </Head>
-      <section className="my-20">
+      <section className="my-2 lg:my-14">
         <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max mb-6">
           Proyectos
         </h1>

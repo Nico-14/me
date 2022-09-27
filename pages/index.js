@@ -12,10 +12,10 @@ export default function About({ data }) {
         <title>Mateo Ledesma - Full Stack Developer</title>
       </Head>
       {data && (
-        <div className="flex flex-col items-center my-20">
-          <section className="self-start">
+        <div className="my-2 lg:my-14">
+          <section>
             <h1 className="text-6xl text-white font-bold">Mateo Ledesma</h1>
-            <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max">
+            <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline">
               Full Stack Developer
             </h2>
             <p className="text-2xl mt-4 text-gray-300 whitespace-pre-line max-w-3xl">
@@ -32,10 +32,10 @@ export default function About({ data }) {
           </section>
 
           <section
-            className="w-full flex flex-col pt-28 mt-28 border-t border-gray-500/30"
+            className="pt-24 mt-24 border-t border-gray-500/30"
             id="projects"
           >
-            <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 self-start">Proyectos destacados</h3>
+            <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline">Proyectos destacados</h3>
             <div className="mt-14 grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
               {data.projects
                 .filter(project => project.featured)
@@ -44,17 +44,17 @@ export default function About({ data }) {
                 ))}
             </div>
             <Link href="/projects" passHref>
-              <ButtonLink className="mt-6 self-start px-5 py-3 w-full text-center md:w-auto">
+              <ButtonLink className="block mt-6 px-5 py-3 w-full text-center md:w-max">
                 Ver más proyectos
               </ButtonLink>
             </Link>
           </section>
 
           <section
-            className="w-full flex flex-col pt-28 mt-28 border-t border-gray-500/30"
+            className="pt-24 mt-24 border-t border-gray-500/30"
             id="contact"
           >
-            <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 self-start">
+            <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline">
               Contáctame
             </h3>
             <p className="text-white mt-6 text-3xl max-w-3xl">
