@@ -20,7 +20,7 @@ export default function About({ data }) {
             </h2>
             <p className="text-2xl mt-4 text-gray-300 whitespace-pre-line max-w-3xl">
               {
-                'Hola 👋🏻! Me llamo Mateo y me dedico al desarrollo web Full Stack. Soy bastante curioso y me encanta investigar y aprender todo lo relacionado con la tecnología e informática, especialmente en el área del desarrollo Web.'
+                'Hola 👋🏻! Me llamo Mateo y me dedico al desarrollo web Full Stack desde el año 2019. Me encanta investigar y aprender todo lo relacionado con la tecnología e informática.'
               }
             </p>
             <p className="text-2xl text-gray-300 whitespace-pre-line max-w-3xl">
