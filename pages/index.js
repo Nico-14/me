@@ -9,18 +9,18 @@ export default function About({ data }) {
   return (
     <Layout>
       <Head>
-        <title>Mateo Ledesma - Full Stack Developer</title>
+        <title>Mateo Ledesma - Web Developer</title>
       </Head>
       {data && (
         <div className="my-2 lg:my-14">
           <section>
             <h1 className="text-6xl text-white font-bold">Mateo Ledesma</h1>
             <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline">
-              Full Stack Developer
+              Web Developer
             </h2>
             <p className="text-2xl mt-4 text-gray-300 whitespace-pre-line max-w-3xl">
               {
-                'Hola 👋🏻! Me llamo Mateo, tengo 22 años y me dedico al desarrollo web Full Stack desde 2019. Me mantengo aprendiendo programación y desarrollo web desde el año 2015, siempre de manera autodidacta, a través de videos, blogs y documentaciones.'
+                'Hola 👋🏻! Me llamo Mateo, tengo 22 años y me dedico al desarrollo web desde 2019, especialmente del lado del Frontend. Me mantengo aprendiendo programación y desarrollo web de manera autodidacta desde el año 2015.'
               }
             </p>
             <p className="text-2xl text-gray-300 whitespace-pre-line max-w-3xl">
