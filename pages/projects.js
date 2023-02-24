@@ -116,11 +116,11 @@ export default function Projects({ data }) {
         <title>Mateo Ledesma - Proyectos</title>
       </Head>
       <section className="my-2 lg:my-14">
-        <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max mb-6">
+        <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max mb-10">
           Proyectos
         </h1>
         <Search options={technologies} onChange={handleChange} selectedOptions={selectedOptions} />
-        <div className="grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 mt-6">
+        <div className="grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mt-10">
           {data.projects
             .filter(
               project =>
