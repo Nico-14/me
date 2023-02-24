@@ -10,7 +10,7 @@ export default function Cv({ content }) {
         <title>Mateo Ledesma - Currículum</title>
       </Head>
       <div className="flex flex-col lg:my-12 print:my-0 print:w-full">
-        <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 max-w-max print:hidden">
+        <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-fit print:hidden">
           Currículum
         </h1>
         <div

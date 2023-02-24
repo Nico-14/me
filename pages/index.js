@@ -35,7 +35,7 @@ export default function About({ data }) {
             className="pt-24 mt-24 border-t border-gray-500/30"
             id="projects"
           >
-            <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline">Proyectos destacados</h3>
+            <h3 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-fit">Proyectos</h3>
             <div className="mt-14 grid gap-x-10 gap-y-12 auto-rows-min grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
               {data.projects
                 .filter(project => project.featured)

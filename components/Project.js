@@ -28,9 +28,9 @@ const Project = ({ project }) => (
         <a href={project.link} target="_blank">
           <header className="flex items-center gap-x-2">
             <h4 className="text-2xl font-semibold flex-1">{project.name}</h4>
-            <LinkIcon className="h-6 w-6 opacity-0 group-hover:opacity-100 transition " />
+            <LinkIcon className="h-6 w-6 opacity-0 group-hover:opacity-100 transition" />
           </header>
-          <p className="text-gray-300 leading-5 whitespace-pre-line mt-1">{project.description}</p>
+          <p className="text-gray-300 leading-5 whitespace-pre-line mt-2">{project.description}</p>
         </a>
       </div>
       <div className="flex flex-wrap gap-3 mt-auto">
