@@ -23,7 +23,7 @@ export default function About({ data }) {
                 'Hola 👋🏻! Me llamo Mateo, tengo 22 años y me dedico al desarrollo web desde 2019, especialmente del lado del Frontend. Me mantengo aprendiendo programación y desarrollo web de manera autodidacta desde el año 2015.'
               }
             </p>
-            <p className="text-2xl text-gray-300 whitespace-pre-line">
+            <p className="text-2xl text-gray-300 whitespace-pre-line mt-4">
               {'Te invito a ver los distintos proyectos que he realizado haciendo '}
               <a href="#projects" className="underline hover:opacity-80 transition-opacity">
                 click acá
