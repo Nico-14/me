@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ButtonLink from './ButtonLink'
 import IconLink from './IconLink'
 import * as Icons from './Icons'
@@ -11,26 +11,87 @@ const NavLink = ({ children, href }) => (
   </Link>
 )
 
+function useShowAnimation() {
+  const [isShowing, setIsShowing] = useState()
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  const show = () => {
+    setIsShowing(true)
+  }
+  
+  const hide = () => {
+    setIsAnimating(false)
+  }
+
+  useEffect(() => {
+    if (isShowing) 
+      setIsAnimating(true)
+  }, [isShowing])
+
+
+  useEffect(() => {
+    if (!isAnimating) 
+      setTimeout(() => {
+        setIsShowing(false)
+      },150);
+  },[isAnimating])
+
+  return { isShowing, isAnimating, show, hide }
+
+}
+
+function useClickOutside(cb) {
+  const ref = useRef()
+  
+  useEffect(() => {
+    const listener = e => {
+      if (!ref.current || ref.current.contains(e.target)) return
+      cb()
+    }
+
+    document.addEventListener('mousedown', listener)
+    document.addEventListener('touchstart', listener)
+
+    return () => { 
+      document.removeEventListener('mousedown', listener)
+      document.removeEventListener('touchstart', listener)
+    }
+  }, [cb])
+
+  return ref
+}
+
 export default function Layout({ children }) {
-  const [isMenuShowing, setIsMenuShowing] = useState()
+  const { isShowing, isAnimating, show, hide } = useShowAnimation()
   const { pathname } = useRouter()
 
-  const handleMenuClick = () => {
-    setIsMenuShowing(!isMenuShowing)
+  const handleClickLink = e => {
+    if (e.target.tagName === 'A') hide()
   }
 
-  const handleClickLink = e => {
-    if (e.target.tagName === 'A') setIsMenuShowing(false)
+  const handleMenuClick = () => {
+    if (isShowing) {
+      hide()
+    } else {
+      show()
+    }
   }
+
+  const ref = useClickOutside(() => {
+    if (isShowing) hide()
+  })
 
   return (
     <div className="flex flex-col min-h-screen bg-[#141414]">
       <header className="flex justify-center sticky lg:static top-0 z-10 print:hidden bg-[#141414] py-2 lg:py-0">
         <nav
-          className={`gap-x-10 bg-[#141414] shadow-2xl shadow-white/10 lg:shadow-none px-4 lg:px-0 ${
-            isMenuShowing ? 'flex absolute' : 'hidden'
-          } py-6 text-zinc-400 w-full top-full left-0 flex-col lg:w-auto lg:static lg:flex lg:flex-row lg:items-center lg:rounded-xl transition`}
+          className={`gap-x-10 bg-[#141414] shadow-2xl shadow-white/10 lg:shadow-none px-4 lg:px-0 transition-all ${
+            isShowing ? 'flex absolute' : 'hidden'
+          } 
+          ${ isAnimating ? 'left-0' : '-left-full' }
+          py-6 text-zinc-400 w-72 top-0 h-screen flex-col lg:h-auto lg:w-auto lg:static lg:flex lg:flex-row lg:items-center lg:rounded-xl transition`}
           onClick={handleClickLink}
+          ref={ref}
         >
           <NavLink href="/">Inicio</NavLink>
           <NavLink href={pathname === '/' ? '/#projects' : '/projects'}>Proyectos</NavLink>
@@ -45,13 +106,13 @@ export default function Layout({ children }) {
 
         <button
           className={`lg:hidden ml-auto mr-2 text-white ${
-            isMenuShowing ? 'opacity-1' : 'opacity-75'
+            isShowing ? 'opacity-1' : 'opacity-75'
           }`}
           onClick={handleMenuClick}
           type="button"
           title="Abrir menú"
         >
-          <Icons.ChevronDown className="h-9 w-9" />
+          <Icons.Menu className="h-10 w-10" />
         </button>
       </header>
       <main className="flex-1 flex max-w-5xl mx-auto mt-4 lg:mt-0 print:p-0 print:m-0 px-4 lg:px-0">

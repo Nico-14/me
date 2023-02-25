@@ -1,10 +1,7 @@
 import Github from './Github';
-import Instagram from './Instagram';
 import Linkedin from './Linkedin';
 import Mail from './Mail';
-import Whatsapp from './Whatsapp';
-import ChevronDown from './ChevronDown';
-import ChevronLeft from './ChevronLeft';
-import ChevronRight from './ChevronRight';
+import Menu from './Menu';
+import LinkIcon from './LinkIcon';
 
-export { Github, Instagram, Linkedin, Mail, Whatsapp, ChevronDown, ChevronLeft, ChevronRight };
+export { Github, Linkedin, Mail, Menu, LinkIcon };
