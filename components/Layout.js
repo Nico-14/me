@@ -105,14 +105,16 @@ export default function Layout({ children }) {
         </nav>
 
         <button
-          className={`lg:hidden ml-auto mr-2 text-white ${
-            isShowing ? 'opacity-1' : 'opacity-75'
+          className={`lg:hidden ml-auto mr-2 text-white transition flex flex-col gap-y-2 p-1 ${
+            isShowing ? 'opacity-100' : 'opacity-75 hover:opacity-80'
           }`}
           onClick={handleMenuClick}
           type="button"
           title="Abrir menú"
         >
-          <Icons.Menu className="h-10 w-10" />
+          <span className={`transition w-7 h-0.5 bg-white rounded-lg ${isShowing ? 'rotate-45 translate-y-2.5' : ''}`}></span>
+          <span className={`transition w-7 h-0.5 bg-white rounded-lg ${isShowing ? 'opacity-0' : ''}`}></span>
+          <span className={`transition w-7 h-0.5 bg-white rounded-lg ${isShowing ? '-rotate-45 -translate-y-2.5' : ''}`}></span>
         </button>
       </header>
       <main className="flex-1 flex max-w-5xl mx-auto mt-4 lg:mt-0 print:p-0 print:m-0 px-4 lg:px-0">
