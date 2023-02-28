@@ -1,13 +1,14 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import useOnClickOutside from "../hooks/useClickOutside"
 import ButtonLink from './ButtonLink'
 import IconLink from './IconLink'
 import * as Icons from './Icons'
 
 const NavLink = ({ children, href }) => (
-  <Link href={href} scroll={href[1] !== '#'}>
-    <a className={`font-semibold hover:text-zinc-100 transition-colors py-2 lg:py-0`}>{children}</a>
+  <Link href={href} scroll={href[1] !== '#'} className={`font-semibold hover:text-zinc-100 transition-colors py-2 lg:py-0`}>
+   {children}
   </Link>
 )
 
@@ -40,27 +41,6 @@ function useShowAnimation() {
 
 }
 
-function useClickOutside(cb) {
-  const ref = useRef()
-  
-  useEffect(() => {
-    const listener = e => {
-      if (!ref.current || ref.current.contains(e.target)) return
-      cb()
-    }
-
-    document.addEventListener('mousedown', listener)
-    document.addEventListener('touchstart', listener)
-
-    return () => { 
-      document.removeEventListener('mousedown', listener)
-      document.removeEventListener('touchstart', listener)
-    }
-  }, [cb])
-
-  return ref
-}
-
 export default function Layout({ children }) {
   const { isShowing, isAnimating, show, hide } = useShowAnimation()
   const { pathname } = useRouter()
@@ -77,7 +57,7 @@ export default function Layout({ children }) {
     }
   }
 
-  const ref = useClickOutside(() => {
+  const ref = useOnClickOutside(() => {
     if (isShowing) hide()
   })
 

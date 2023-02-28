@@ -1,3 +1,4 @@
+import Image from "next/image"
 import ButtonLink from './ButtonLink'
 import { Github } from './Icons'
 import LinkIcon from './Icons/LinkIcon'
@@ -5,13 +6,14 @@ import LinkIcon from './Icons/LinkIcon'
 const Project = ({ project }) => (
   <article className="rounded overflow-hidden border border-gray-500/30 h-full flex flex-col hover:border-gray-500/50 transition group shadow-2xl hover:shadow-white/5">
     <a href={project.link} target="_blank">
-      <div className="aspect-[16/8] overflow-hidden flex">
+      <div className="aspect-[16/8] overflow-hidden flex relative">
         {project.images ? (
-          <img
+          <Image
             src={project.images[0]}
             className="object-cover w-full"
             alt={`${project.name} demo`}
-          ></img>
+            fill
+          ></Image>
         ) : (
           <div className="bg-[#141414] p-2 flex flex-col justify-center border-b border-gray-500/30">
             <span className="text-3xl font-bold text-white">{project.altName || project.name}</span>

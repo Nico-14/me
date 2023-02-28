@@ -13,4 +13,6 @@ const ButtonLink = forwardRef(({ href, children, className, target }, ref) => (
   </a>
 ))
 
+ButtonLink.displayName = 'ButtonLink';
+
 export default ButtonLink

@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-export default function useOnClickOutside(ref, handler) {
+export default function useOnClickOutside(handler) {
+  const ref = useRef();
+
   useEffect(() => {
     const listener = event => {
       if (!ref.current || ref.current.contains(event.target)) {
@@ -14,5 +16,7 @@ export default function useOnClickOutside(ref, handler) {
       document.removeEventListener('mousedown', listener);
       document.removeEventListener('touchstart', listener);
     };
-  }, [ref, handler]);
+  }, [handler]);
+
+  return ref;
 }

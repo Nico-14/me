@@ -10,10 +10,9 @@ function Search({ options, onChange, selectedOptions }) {
 
   const [isSelectShowing, setIsSelectShowing] = useState(false)
   const [filteredOptions, setFilteredOptions] = useState([])
-  const divRef = useRef()
   const inputRef = useRef()
 
-  useOnClickOutside(divRef, () => setIsSelectShowing(false))
+  const ref = useOnClickOutside(() => setIsSelectShowing(false))
 
   useEffect(() => {
     setFilteredOptions(
@@ -31,7 +30,7 @@ function Search({ options, onChange, selectedOptions }) {
         isSelectShowing ? 'border-white/60' : ' border-gray-500/30'
       }`}
       onClick={() => inputRef.current.focus()}
-      ref={divRef}
+      ref={ref}
       title="Filtrar por categoría"
     >
       {selectedOptions.map(option => (
@@ -83,6 +82,7 @@ function Search({ options, onChange, selectedOptions }) {
                   setValue('')
                 }}
                 role="option"
+                aria-selected="false"
                 type="button"
                 key={option}
               >

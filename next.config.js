@@ -3,7 +3,7 @@ module.exports = {
     locales: ['es'],
     defaultLocale: 'es',
   },
-  async redirects() {
+  redirects() {
     return [
       {
         source: '/proyectos',
@@ -17,4 +17,7 @@ module.exports = {
       },
     ];
   },
+  images: {
+    domains: ['raw.githubusercontent.com'],
+  }
 };

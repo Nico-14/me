@@ -43,7 +43,7 @@ export default function About({ data }) {
                   <Project project={project} key={project.name} />
                 ))}
             </div>
-            <Link href="/projects" passHref>
+            <Link href="/projects" passHref legacyBehavior>
               <ButtonLink className="block mt-6 px-5 py-3 w-full text-center md:w-max">
                 Ver más proyectos
               </ButtonLink>
